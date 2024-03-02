@@ -1,3 +1,6 @@
+# start picom compositor if it is installed
+exec --no-startup-id ~/.config/i3/startup.py --picom
+
 # start copyq
 exec --no-startup-id copyq
 
