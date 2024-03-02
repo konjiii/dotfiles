@@ -38,6 +38,9 @@ bindsym mod4+Shift+s exec --no-startup-id maim -s -D ~/media/images/screenshots/
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# open dropdown terminal
+bindsym F12 exec tdrop -ma -w -4 -y "$PANEL_HEIGHT" -s dropdown kitty
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
