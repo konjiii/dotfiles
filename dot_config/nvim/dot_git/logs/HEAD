@@ -1,6 +1,0 @@
-0000000000000000000000000000000000000000 afa3f26efbf44079364ad52c6575c8180f0425ce konjiii <kenji.opdam@gmail.com> 1707720226 +0100	clone: from https://github.com/konjiii/nvim.git
-afa3f26efbf44079364ad52c6575c8180f0425ce 007809ff3e6b9ea19000d47db7e31647990b8899 konjiii <kenji.opdam@gmail.com> 1708635042 +0100	commit: added noice.nvim
-007809ff3e6b9ea19000d47db7e31647990b8899 afa3f26efbf44079364ad52c6575c8180f0425ce konjiii <kenji.opdam@gmail.com> 1708635346 +0100	reset: moving to HEAD~1
-afa3f26efbf44079364ad52c6575c8180f0425ce 90968b8fcb34f32502732384e665d1b8769c373c konjiii <kenji.opdam@gmail.com> 1708635416 +0100	pull: Fast-forward
-90968b8fcb34f32502732384e665d1b8769c373c 6ea45ac4a09f203b1a51b3b9847dff07c7febc52 konjiii <kenji.opdam@gmail.com> 1708635541 +0100	commit: added noice.nvim
-6ea45ac4a09f203b1a51b3b9847dff07c7febc52 54de68e444736cd66542e13acfdbfe7a6269e681 konjiii <kenji.opdam@gmail.com> 1709075975 +0100	commit: fixed oil.nvim keybindings and added plugin descriptions
