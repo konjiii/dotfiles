@@ -40,6 +40,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # open dropdown terminal
 bindsym F12 exec tdrop -ma -w -4 -x 2 -y 60 kitty
+bindsym Scroll_Lock exec tdrop -ma -w -4 -x 2 -y 60 kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill

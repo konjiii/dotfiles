@@ -8,6 +8,8 @@ exec --no-startup-id copyq
 exec --no-startup-id pamixer --set-volume 0
 exec --no-startup-id pamixer --mute
 
+exec --no-startup-id setxkbmap -option caps:escape
+
 # # Start volumeicon (tray icon for sound volume)
 # exec --no-startup-id volumeicon
 
