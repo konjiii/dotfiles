@@ -6,9 +6,9 @@
 # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 #
 # raise, lower and mute volume using pamixer
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 2 && /home/konji/.config/i3/scripts/volume_change/volume_change.sh
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 2 && /home/konji/.config/i3/scripts/volume_change/volume_change.sh
-bindsym XF86AudioMute exec --no-startup-id pamixer --toggle-mute && /home/konji/.config/i3/scripts/volume_change/volume_change.sh
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --increase 2 && ~/.config/i3/scripts/volume_change.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --decrease 2 && ~/.config/i3/scripts/volume_change.sh
+bindsym XF86AudioMute exec --no-startup-id pamixer --toggle-mute && ~/.config/i3/scripts/volume_change.sh
 
 # enable media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
