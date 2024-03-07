@@ -11,8 +11,8 @@ exec --no-startup-id pamixer --mute
 # remap capslock to escape
 exec --no-startup-id setxkbmap -option caps:escape
 
-# start optimus-manager tray app
-exec --no-startup-id optimus-manager-qt
+# start optimus-manager tray applet if it is installed
+exec --no-startup-id ~/.config/i3/startup.py --optimus
 
 # # Start volumeicon (tray icon for sound volume)
 # exec --no-startup-id volumeicon
