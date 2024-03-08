@@ -8,12 +8,6 @@ exec --no-startup-id copyq
 exec --no-startup-id pamixer --set-volume 0
 exec --no-startup-id pamixer --mute
 
-# remap capslock to escape
-exec --no-startup-id setxkbmap -option caps:escape
-
-# remap windows key to alt and vice versa
-exec --no-startup-id setxkbmap -option altwin:swap_lalt_lwin
-
 # start optimus-manager tray applet if it is installed
 exec --no-startup-id ~/.config/i3/scripts/startup.py --optimus
 
