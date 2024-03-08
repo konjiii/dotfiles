@@ -1,9 +1,13 @@
 #
 # ~/.bashrc
 #
+#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
 
 export EDITOR=nvim
 
@@ -15,7 +19,6 @@ PS1='[\u@\h \W]\$ '
 eval "$(thefuck --alias)"
 . "$HOME/.cargo/env"
 
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
+eval "$(starship init bash)"
 
 neofetch
