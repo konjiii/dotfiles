@@ -25,15 +25,15 @@ bindsym $mod+XF86MonBrightnessUp exec --no-startup-id brightnessctl set 1%+
 bindsym $mod+XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%-
 
 # open copyq menu with win+v and copyq clipboard with win+mod+v
-bindsym mod4+v exec --no-startup-id copyq menu
-bindsym mod4+Shift+v exec --no-startup-id copyq toggle
+bindsym mod1+v exec --no-startup-id copyq menu
+bindsym mod1+Shift+v exec --no-startup-id copyq toggle
 
 # open maim screenshot utility with alt+shift+s
-bindsym mod4+s exec --no-startup-id maim -sD | xclip -sel clip -t image/png
-bindsym mod4+Shift+s exec --no-startup-id maim -s -D ~/media/images/screenshots/$(date +%Y-%M-%d_%H-%m-%S)_maim.png
+bindsym mod1+s exec --no-startup-id maim -sD | xclip -sel clip -t image/png
+bindsym mod1+Shift+s exec --no-startup-id maim -s -D ~/media/images/screenshots/$(date +%Y-%M-%d_%H-%m-%S)_maim.png
 
 # # use maim to decode qr code
-# bindsym mod4+q exec --no-startup-id maim -qsD | zbarimg -q --raw - | xclip -selection clipboard -f
+# bindsym mod1+q exec --no-startup-id maim -qsD | zbarimg -q --raw - | xclip -selection clipboard -f
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
