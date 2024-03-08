@@ -15,7 +15,7 @@ include $HOME/.config/i3/remap
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod mod4
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
