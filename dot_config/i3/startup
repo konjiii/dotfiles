@@ -17,6 +17,9 @@ exec --no-startup-id setxkbmap -option altwin:swap_lalt_lwin
 # start optimus-manager tray applet if it is installed
 exec --no-startup-id ~/.config/i3/scripts/startup.py --optimus
 
+# set wallpaper
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/wallpaper.jpg
+
 # # Start volumeicon (tray icon for sound volume)
 # exec --no-startup-id volumeicon
 
