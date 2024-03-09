@@ -2,12 +2,12 @@
 palette = 'catppuccin_mocha'
 
 format = '''
-[](text)$os$username[](bg:teal fg:text)$directory[](fg:teal)$all
+[](text)$os$username[](bg:blue fg:text)$directory[](fg:blue)$all
 '''
 
 [character]
 # Note the use of Catppuccin color 'maroon'
-success_symbol = '[❯](teal)'
+success_symbol = '[❯](blue)'
 error_symbol = '[❯](red)'
 vimcmd_symbol = '[❮](green)'
 
@@ -27,7 +27,7 @@ disabled = true
 truncation_length = 4
 truncation_symbol = '…/'
 # Catppuccin 'lavender'
-style = 'fg:bold crust bg:teal'
+style = 'fg:bold crust bg:blue'
 format = '[ $path ]($style)'
 
 [directory.substitutions]
