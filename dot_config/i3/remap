@@ -16,7 +16,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # launch rofi
-bindsym $mod+m exec /home/konji/.config/rofi/launchers/type-3/launcher.sh
+bindsym $mod+m exec rofi -show drun
 
 # set brightness higher and lower
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
