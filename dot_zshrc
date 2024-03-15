@@ -1,13 +1,14 @@
 #
-# ~/.bashrc
+# ~/.zshrc
 #
 #
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
+eval "$(atuin init zsh)"
+
+neofetch
 
 export EDITOR=nvim
 
@@ -16,15 +17,13 @@ alias grep='grep --color=auto'
 alias ip='ip --color=auto'
 alias git-clone-all="git branch -r | grep -v '\->' | while read remote; do git branch --track \"\${remote#origin/}\" \"\$remote\"; done"
 cd(){ builtin cd "${1-$HOME/mhome}" "${@:2}"; }
-if [ $PWD == $HOME ];
+if [[ "$PWD" == "$HOME" ]];
 then
     cd
 fi
 PS1='[\u@\h \W]\$ '
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-eval "$(thefuck --alias)"
+eval $(thefuck --alias)
 . "$HOME/.cargo/env"
 
-eval "$(starship init bash)"
-
-neofetch
+eval "$(starship init zsh)"
