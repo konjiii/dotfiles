@@ -33,8 +33,8 @@ ethernet _first_ {
 
 battery all {
         format = "%status %percentage %remaining"
-        low_threshold = 25
-        threshold_type = percentage
+        low_threshold = "25"
+        threshold_type = "percentage"
 }
 
 disk "/" {
@@ -43,6 +43,7 @@ disk "/" {
 
 load {
         format = "%1min"
+        max_threshold = "2"
 }
 
 cpu_temperature 0 {

@@ -38,9 +38,15 @@ bindsym mod1+Shift+s exec --no-startup-id maim -s -D ~/media/images/screenshots/
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+{{- if eq .chezmoi.hostname "archlinux" }}
 # open dropdown terminal
 bindsym F12 exec tdrop -ma -w -4 -x 2 -y 60 kitty
-bindsym Scroll_Lock exec tdrop -ma -w -4 -x 2 -y 60 kitty
+{{- end }}
+
+{{- if eq .chezmoi.hostname "archlaptop" }}
+# open dropdown terminal
+bindsym Scroll_Lock exec tdrop -ma -w -4 -x 2 -y 18 kitty
+{{- end }}
 
 # kill focused window
 bindsym $mod+Shift+q kill
