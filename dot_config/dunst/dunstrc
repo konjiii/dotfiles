@@ -336,7 +336,7 @@
 
 [myvolume]
     history_ignore = yes
-    timeout = 10
+    timeout = 3
     width = 300
     height = 300
     origin = top-right
