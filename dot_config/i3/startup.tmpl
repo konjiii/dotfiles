@@ -1,5 +1,7 @@
-# start picom compositor if it is installed
-exec --no-startup-id ~/.config/i3/scripts/startup.py --picom
+{{- if eq .chezmoi.hostname "archlinux" }}
+# start picom compositor
+exec --no-startup-id picom -b
+{{- end }}
 
 # start copyq
 exec --no-startup-id copyq
@@ -7,9 +9,11 @@ exec --no-startup-id copyq
 # set volume to 0 and mute on startup
 exec --no-startup-id pamixer --set-volume 0
 exec --no-startup-id pamixer --mute
+{{- if eq .chezmoi.hostname "archlaptop" }}
 
-# start optimus-manager tray applet if it is installed
-exec --no-startup-id ~/.config/i3/scripts/startup.py --optimus
+# start optimus-manager tray applet
+exec --no-startup-id optimus-manager-qt
+{{- end }}
 
 # set wallpaper
 exec --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/wallpaper.jpg
@@ -31,6 +35,8 @@ exec --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/wallpaper.jpg
 # # NetworkManager is the most popular way to manage wireless networks on Linux,
 # # and nm-applet is a desktop environment-independent system tray GUI for it.
 # exec --no-startup-id nm-applet
+{{- if eq .chezmoi.hostname "archlinux" }}
 
 # start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+{{- end }}
