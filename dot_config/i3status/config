@@ -11,7 +11,6 @@ general {
         interval = 5
 }
 
-order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
@@ -61,6 +60,6 @@ tztime local {
 }
 
 volume master {
-    format = "♪: %volume"
-    format_muted = "♪: muted (%volume)"
+    format = "VOL: %volume"
+    format_muted = "VOL: muted (%volume)"
 }
