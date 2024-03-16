@@ -13,11 +13,11 @@ general {
 
 order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery all"
-order += "load"
-order += "cpu_temperature 0"
 order += "disk /"
 order += "memory"
+order += "cpu_temperature 0"
+order += "load"
+order += "battery all"
 order += "volume master"
 order += "tztime local"
 
