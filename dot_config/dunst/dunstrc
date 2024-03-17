@@ -467,5 +467,6 @@
    set_stack_tag = "volume"
    timeout = "3"
    origin = "center"
+   history_ignore = "true"
 
 # vim: ft=cfg
