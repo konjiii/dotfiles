@@ -1,4 +1,7 @@
 #!/bin/sh
 
 systemctl --user import-environment DISPLAY
+
+./.config/scripts/mouse_accel_off.sh
+
 exec i3
