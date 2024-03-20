@@ -6,24 +6,41 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# initialize atuin
 eval "$(atuin init zsh)"
 
+# print system information
 neofetch
 
+# set editor as neovim
 export EDITOR=nvim
 
+# turn off vim mode
+bindkey -e
+
+# set aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip --color=auto'
 alias git-clone-all="git branch -r | grep -v '\->' | while read remote; do git branch --track \"\${remote#origin/}\" \"\$remote\"; done"
+
+# make cd command to go to mhome
 cd(){ builtin cd "${1-$HOME/mhome}" "${@:2}"; }
+# if the current directory is home on terminal startup, go to mhome
 if [[ "$PWD" == "$HOME" ]];
 then
     cd
 fi
+
 PS1='[\u@\h \W]\$ '
+
+# source miniconda
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+# initialize thefuck
 eval $(thefuck --alias)
+# initialize cargo
 . "$HOME/.cargo/env"
 
+# initialize starship
 eval "$(starship init zsh)"
