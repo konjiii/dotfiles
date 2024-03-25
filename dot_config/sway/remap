@@ -28,9 +28,9 @@ bindsym $mod+XF86MonBrightnessDown exec --no-startup-id brightnessctl set 1%-
 bindsym mod1+v exec --no-startup-id copyq menu
 bindsym mod1+Shift+v exec --no-startup-id copyq toggle
 
-# open maim screenshot utility with alt+shift+s
-bindsym mod1+s exec --no-startup-id maim -sD | xclip -sel clip -t image/png
-bindsym mod1+Shift+s exec --no-startup-id maim -s -D ~/media/Pictures/screenshots/$(date +%Y-%M-%d_%H-%m-%S)_maim.png
+# open grim screenshot utility with alt+shift+s
+bindsym mod1+s exec --no-startup-id grim -g "$(slurp)" - | wl-copy -t image/png
+bindsym mod1+Shift+s exec --no-startup-id grim -g "$(slurp)" ~/media/Pictures/screenshots/$(date +%Y-%M-%d_%H-%m-%S)_grim.png
 
 # # use maim to decode qr code
 # bindsym mod1+q exec --no-startup-id maim -qsD | zbarimg -q --raw - | xclip -selection clipboard -f
@@ -38,7 +38,7 @@ bindsym mod1+Shift+s exec --no-startup-id maim -s -D ~/media/Pictures/screenshot
 # start a terminal
 bindsym $mod+Return exec $term
 # open dropdown terminal
-bindsym Scroll_Lock exec tdrop -ma -w -4 -x 2 -y 18 $term
+# bindsym Scroll_Lock exec tdrop -ma -w -4 -x 2 -y 18 $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
