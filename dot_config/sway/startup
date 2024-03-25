@@ -10,8 +10,8 @@ exec --no-startup-id pamixer --mute
 # start optimus-manager tray applet
 exec --no-startup-id optimus-manager-qt
 
-# set wallpaper
-exec --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/wallpaper.jpg
+# # set wallpaper
+# exec --no-startup-id feh --bg-fill ~/.config/i3/wallpapers/wallpaper.jpg
 
 # # Start volumeicon (tray icon for sound volume)
 # exec --no-startup-id volumeicon
