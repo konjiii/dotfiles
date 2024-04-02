@@ -468,5 +468,11 @@
    timeout = "3"
    origin = "center"
    history_ignore = "true"
+[stack-brightness]
+   appname = "changeBrightness"
+   set_stack_tag = "brightness"
+   timeout = "3"
+   origin = "center"
+   history_ignore = "true"
 
 # vim: ft=cfg
