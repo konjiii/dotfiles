@@ -1,5 +1,3 @@
-
-
 # start copyq
 exec copyq
 
@@ -7,8 +5,8 @@ exec copyq
 exec pamixer --set-volume 0
 exec pamixer --mute
 
-# start optimus-manager tray applet
-exec optimus-manager-qt
+# # start optimus-manager tray applet
+# exec optimus-manager-qt
 
 # # set wallpaper
 # exec feh --bg-fill ~/.config/i3/wallpapers/wallpaper.jpg
