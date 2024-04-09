@@ -1,9 +1,11 @@
 # start copyq
 exec copyq
 
+{{- if eq .chezmoi.hostname "archlaptop" }}
 # set volume to 0 and mute on startup
 exec pamixer --set-volume 0
 exec pamixer --mute
+{{- end }}
 
 # # start optimus-manager tray applet
 # exec optimus-manager-qt
