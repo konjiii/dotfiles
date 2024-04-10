@@ -33,6 +33,7 @@ alias update-package-list="pacman -Qqne > $HOME/mhome/coding/bash/bash_scripts/i
 alias update-package-list="pacman -Qqne > $HOME/mhome/coding/bash/bash_scripts/install_scripts/arch_linux/packages/desktop/pacman;\
     pacman -Qqme > $HOME/mhome/coding/bash/bash_scripts/install_scripts/arch_linux/packages/desktop/aur"
 {{- end }}
+alias polkit="/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 # make cd command to go to mhome
 cd(){ builtin cd "${1-$HOME/mhome}" "${@:2}"; }
