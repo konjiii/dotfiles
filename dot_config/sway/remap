@@ -16,7 +16,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # launch rofi
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec $menu
 
 # set brightness higher and lower
 bindsym F4 exec brightnessctl set 5%+ && ~/.config/sway/scripts/brightness_change.sh
