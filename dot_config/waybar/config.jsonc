@@ -8,107 +8,105 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/mode",
-        "hyprland/scratchpad",
-        "custom/media"
+        "custom/media",
+        "hyprland/window",
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock",
+        "privacy",
     ],
     "modules-right": [
-        "mpd",
-        "idle_inhibitor",
+        "gamemode",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
-        "sway/language",
-        "battery",
-        "battery#bat2",
-        "clock",
-        "tray"
+        "bluetooth",
+        "group/sysinfo",
+        "tray",
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+    "privacy": {
+        "icon-spacing": 4,
+        "icon-size": 18,
+        "transition-duration": 250,
+        "modules": [
+            {
+                "type": "screenshare",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+            {
+                "type": "audio-in",
+                "tooltip": true,
+                "tooltip-icon-size": 24
+            },
+        ]
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+    "group/sysinfo": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu",
+            "memory",
+            "disk",
+        ],
     },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+    "hyprland/workspaces": {
+        "format": "{icon}{windows}",
+        "format-window-separator": "",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<discord>": " ",
+            "class<WebCord>": " ",
+            "title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
+            "title<.*reddit.*>": " 󰑍", // Windows whose titles contain "reddit"
+            "title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+            "class<floorp>": " ", // Windows whose classes are "firefox"
+            "class<code.*>": " 󰨞",
+            "class<spotify>": " ",
+            "class<steam>": " ",
+            "class<kitty>": " ",
+        },
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
+    "hyprland/window": {
+        "format": "{class}",
+        "rewrite": {
+            "kitty": "",
+            "floorp": "",
+            "steam": "",
+            "discord": "",
+            "WebCord": "",
+            "code.*": "󰨞",
         },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
     },
     "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%Y-%m-%d %H:%M}  ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 2,
+                    "weeks-pos"     : "left",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+    "disk": {
+        "format": "{used}/{total} ",
+        "path": "/",
     },
     "cpu": {
         "format": "{usage}% ",
@@ -130,34 +128,11 @@
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+    "bluetooth": {
+        "format-connected": " connected {num_connections}",
+        "tooltip": true,
+        "tooltip-format": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias} 󰁹{device_battery_percentage}%",
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -170,12 +145,10 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "{volume}%  {icon}",
+        "format-muted": "{volume}%  ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -186,6 +159,17 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "gamemode": {
+        "format": "{glyph} {count}",
+        "glyph": "",
+        "hide-not-running": true,
+        "use-icon": true,
+        "icon-name": "input-gaming-symbolic",
+        "icon-spacing": 4,
+        "icon-size": 20,
+        "tooltip": true,
+        "tooltip-format": "Games running: {count}"
     },
     "custom/media": {
         "format": "{icon} {}",
