@@ -55,7 +55,7 @@
         "window-rewrite": {
             "class<discord>": " ",
             "class<WebCord>": " ",
-            "title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
+            "title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
             "title<.*reddit.*>": " 󰑍", // Windows whose titles contain "reddit"
             "title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
             "class<floorp>": " ", // Windows whose classes are "firefox"
@@ -68,12 +68,12 @@
     "hyprland/window": {
         "format": "{class}",
         "rewrite": {
-            "kitty": "",
-            "floorp": "",
-            "steam": "",
-            "discord": "",
-            "WebCord": "",
-            "code.*": "󰨞",
+            "kitty": " ",
+            "floorp": " ",
+            "steam": " ",
+            "discord": " ",
+            "WebCord": " ",
+            "code.*": "󰨞 ",
         },
     },
     "tray": {
