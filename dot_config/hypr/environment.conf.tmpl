@@ -1,26 +1,38 @@
 # Some default env vars.
 env = XCURSOR_SIZE,24
 env = QT_QPA_PLATFORMTHEME,qt5ct # change to qt6ct if you have that
+{{- if eq .chezmoi.hostname "archlinux" }}
 env = LIBVA_DRIVER_NAME,nvidia
 env = XDG_SESSION_TYPE,wayland
 env = GBM_BACKEND,nvidia-drm
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 env = WLR_NO_HARDWARE_CURSORS,1
 env = __GL_GSYNC_ALLOWED,1
+{{- end }}
 
+{{- if eq .chezmoi.hostname "archlinux" }}
 monitor=DP-1,1920x1080@144,1920x0,1,vrr,1
 monitor=DP-2,1920x1080@75,0x0,1,vrr,1
+{{- end }}
 
+{{- if eq .chezmoi.hostname "archlaptop" }}
+monitor=eDP-1,1920x1080@60,0x0,1
+{{- end }}
+
+{{- if eq .chezmoi.hostname "archlinux" }}
 # workspace rules
 workspace = 1, monitor:DP-2, default:true
 workspace = 2, monitor:DP-1, default:true
 workspace = 10, monitor:DP-1, default:false
+{{- end }}
 
 # window rules
+{{- if eq .chezmoi.hostname "archlinux" }}
 windowrule = workspace 1, ^(floorp)$
 windowrule = workspace 1, ^(vivaldi)(.*)$
 windowrule = workspace 1, ^(discord)$
 windowrule = workspace 1, ^(WebCord)$
+{{- end }}
 windowrule = workspace 10, ^(Spotify)$
 windowrule = float, ^(Matplotlib)$
 
