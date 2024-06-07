@@ -21,8 +21,15 @@
         "network",
         "bluetooth",
         "group/sysinfo",
+        {{- if eq .chezmoi.hostname "archlaptop" }}
+        "battery",
+        {{- end }}
         "tray",
     ],
+    {{- if eq .chezmoi.hostname "archlaptop" }}
+    "battery": {
+    },
+    {{- end }}
     "privacy": {
         "icon-spacing": 4,
         "icon-size": 18,
