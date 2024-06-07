@@ -8,6 +8,14 @@ bind = , XF86AudioPlay, exec, playerctl play-pause
 bind = , XF86AudioNext, exec, playerctl next
 bind = , XF86AudioPrev, exec, playerctl previous
 
+{{- if eq .chezmoi.hostname "archlaptop" }}
+# set brightness higher and lower
+bind = , F4, exec, brightnessctl set 5%+ && ~/.config/hypr/scripts/brightness_change.sh
+bind = , F3, exec, brightnessctl set 5%- && ~/.config/hypr/scripts/brightness_change.sh
+bind = $mainMod, F3, exec, brightnessctl set 1%+ && ~/.config/sway/scripts/brightness_change.sh
+bind = $mainMod, F3, exec, brightnessctl set 1%- && ~/.config/sway/scripts/brightness_change.sh
+{{- end }}
+
 # open copyq with win+v and copyq clipboard with win+mod+v
 bind = ALT, V, exec, copyq menu
 bind = ALTSHIFT, V, exec, copyq toggle
