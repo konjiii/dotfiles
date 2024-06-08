@@ -53,7 +53,9 @@ input {
 
     # mouse
     sensitivity = 0 # -1.0 to 1.0, 0 means no modification.
+    {{- if eq .chezmoi.hostname "archlinux" }}
     accel_profile = flat
+    {{- end }}
     # force_no_accel = true
 }
 
