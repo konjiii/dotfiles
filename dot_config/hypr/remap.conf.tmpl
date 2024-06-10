@@ -7,8 +7,8 @@ bind = , XF86AudioMute, exec, pamixer --toggle-mute && ~/.config/hypr/scripts/vo
 bind = , XF86AudioPlay, exec, playerctl play-pause
 bind = , XF86AudioNext, exec, playerctl next
 bind = , XF86AudioPrev, exec, playerctl previous
-
 {{- if eq .chezmoi.hostname "archlaptop" }}
+
 # set brightness higher and lower
 bind = , F4, exec, brightnessctl set 5%+ && ~/.config/hypr/scripts/brightness_change.sh
 bind = , F3, exec, brightnessctl set 5%- && ~/.config/hypr/scripts/brightness_change.sh
@@ -23,6 +23,11 @@ bind = ALTSHIFT, V, exec, copyq toggle
 # open grim screenshot utility with win+shift+s
 bind = ALT, S, exec, grim -g "$(slurp)" - | wl-copy -t image/png
 bind = ALTSHIFT, S, exec, grim -g "$(slurp)" ~/media/Pictures/screenshots/$(date +%Y-%M-%d_%H-%m-%S)_grim.png
+{{- if eq .chezmoi.hostname "archlinux" }}
+
+# save gpu recorder replay
+bind = , F8, exec, ~/.config/hypr/scripts/gpu-screen-recorder/save-replay.sh
+{{- end }}
 
 # restart waybar
 bind = $mainMod SHIFT, R, exec, killall waybar; waybar
