@@ -2,5 +2,12 @@
 # exec-once = waybar & hyprpaper & firefox
 exec-once = waybar & hyprpaper & copyq
 {{- if eq .chezmoi.hostname "archlinux" }}
+
+# polkit authentication agent
 exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+{{- end }}
+{{- if eq .chezmoi.hostname "archlinux" }}
+
+# gpu replay recorder
+exec-once = ~/.config/hypr/scripts/gpu-screen-recorder/start-replay.sh
 {{- end }}
