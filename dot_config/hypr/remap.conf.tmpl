@@ -10,10 +10,18 @@ bind = , XF86AudioPrev, exec, playerctl previous
 {{- if eq .chezmoi.hostname "archlaptop" }}
 
 # set brightness higher and lower
-bind = , F4, exec, brightnessctl set 5%+ && ~/.config/hypr/scripts/brightness_change.sh
-bind = , F3, exec, brightnessctl set 5%- && ~/.config/hypr/scripts/brightness_change.sh
-bind = $mainMod, F3, exec, brightnessctl set 1%+ && ~/.config/sway/scripts/brightness_change.sh
-bind = $mainMod, F3, exec, brightnessctl set 1%- && ~/.config/sway/scripts/brightness_change.sh
+bind = , F4, exec, brightnessctl set 5%+ && ~/.config/hypr/scripts/brightness/brightness_change_laptop.sh
+bind = , F3, exec, brightnessctl set 5%- && ~/.config/hypr/scripts/brightness/brightness_change_laptop.sh
+bind = $mainMod, F3, exec, brightnessctl set 1%+ && ~/.config/sway/scripts/brightness/brightness_change_laptop.sh
+bind = $mainMod, F3, exec, brightnessctl set 1%- && ~/.config/sway/scripts/brightness/brightness_change_laptop.sh
+{{- end }}
+{{- if eq .chezmoi.hostname "archlinux" }}
+
+# set brightness higher and lower
+bind = , F6, exec, ~/.config/hypr/scripts/brightness/brightness_change_desktop.sh 100 --notif
+bind = , F5, exec, ~/.config/hypr/scripts/brightness/brightness_change_desktop.sh -100 --notif
+bind = $mainMod, F6, exec, ~/.config/hypr/scripts/brightness/brightness_change_desktop.sh 10 --notif
+bind = $mainMod, F5, exec, ~/.config/hypr/scripts/brightness/brightness_change_desktop.sh -10 --notif
 {{- end }}
 
 # open copyq with win+v and copyq clipboard with win+mod+v
