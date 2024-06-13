@@ -1,7 +1,7 @@
 # raise, lower and mute volume using pamixer
-binde = , XF86AudioRaiseVolume, exec, pamixer --increase 2 && ~/.config/hypr/scripts/volume_change.sh
-binde = , XF86AudioLowerVolume, exec, pamixer --decrease 2 && ~/.config/hypr/scripts/volume_change.sh
-bind = , XF86AudioMute, exec, pamixer --toggle-mute && ~/.config/hypr/scripts/volume_change.sh
+bindel = , XF86AudioRaiseVolume, exec, pamixer --increase 2 && ~/.config/hypr/scripts/volume_change.sh
+bindel = , XF86AudioLowerVolume, exec, pamixer --decrease 2 && ~/.config/hypr/scripts/volume_change.sh
+bindl = , XF86AudioMute, exec, pamixer --toggle-mute && ~/.config/hypr/scripts/volume_change.sh
 
 # enable media player controls
 bind = , XF86AudioPlay, exec, playerctl play-pause
@@ -121,3 +121,4 @@ bindm = $mainMod, mouse:273, resizewindow
 
 # set global keybinds
 # bind = CONTROLSHIFT, M, pass, ^WebCord$
+bind = , Num_Lock, pass, ^discord$
