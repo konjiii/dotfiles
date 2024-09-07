@@ -1,6 +1,8 @@
 # Execute your favorite apps at launch
 # exec-once = waybar & hyprpaper & firefox
-exec-once = waybar & hyprpaper & copyq
+exec-once = waybar & hyprpaper
+# exec-once = wl-paste --watch cliphist store
+exec-once = clipse -listen
 {{- if eq .chezmoi.hostname "archlinux" }}
 
 # polkit authentication agent
