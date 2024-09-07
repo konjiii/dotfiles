@@ -25,12 +25,12 @@ bind = $mainMod, F5, exec, ~/.config/hypr/scripts/brightness/brightness_change_d
 {{- end }}
 
 # open copyq with win+v and copyq clipboard with win+mod+v
-bind = ALT, V, exec, copyq menu
-bind = ALTSHIFT, V, exec, copyq toggle
+# bind = $mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
+bind = $mainMod, V, exec, kitty --class clipse -e zsh -c 'clipse'
 
 # open grim screenshot utility with win+shift+s
-bind = ALT, S, exec, grim -g "$(slurp)" - | wl-copy -t image/png
-bind = ALTSHIFT, S, exec, grim -g "$(slurp)" ~/media/Pictures/screenshots/$(date +%Y-%M-%d_%H-%m-%S)_grim.png
+bind = $mainMod, S, exec, grim -g "$(slurp)" - | wl-copy -t image/png
+bind = $mainMod SHIFT, S, exec, grim -g "$(slurp)" ~/media/Pictures/screenshots/$(date +%Y-%M-%d_%H-%m-%S)_grim.png
 {{- if eq .chezmoi.hostname "archlinux" }}
 
 # save gpu recorder replay
