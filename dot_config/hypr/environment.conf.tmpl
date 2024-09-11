@@ -87,12 +87,21 @@ decoration {
     rounding = 10
     
     blur {
+{{- if eq .chezmoi.hostname "archlinux" }}
         enabled = true
+{{- end }}
+{{- if eq .chezmoi.hostname "archlaptop" }}
+        enabled = false
+{{- end }}
         size = 3
         passes = 1
     }
-
+{{- if eq .chezmoi.hostname "archlinux" }}
     drop_shadow = yes
+{{- end }}
+{{- if eq .chezmoi.hostname "archlaptop" }}
+    drop_shadow = false
+{{- end }}
     shadow_range = 4
     shadow_render_power = 3
     col.shadow = rgba(1a1a1aee)
@@ -132,6 +141,7 @@ dwindle {
 misc {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
     force_default_wallpaper = 0 # Set to 0 or 1 to disable the anime mascot wallpapers
+    vfr = true
 }
 
 # Example per-device config
