@@ -1,28 +1,47 @@
 general {
     lock_cmd = pidof hyprlock || hyprlock
+{{- if eq .chezmoi.hostname "archlaptop" }}
     before_sleep_cmd = loginctl lock-session
+{{- end }}
     after_sleep_cmd = hyprctl dispatch dpms on
 }
 
 listener {
-    timeout = 60                            # in seconds.
+{{- if eq .chezmoi.hostname "archlaptop" }}
+    timeout = 60
+{{- end }}
+{{- if eq .chezmoi.hostname "archlinux" }}
+    timeout = 300
+{{- end }}
     on-timeout = brightnessctl -s set 1% # command to run when timeout has passed.
     on-resume = brightnessctl -r  # command to run when activity is detected after timeout has fired.
 }
 
 listener {
+{{- if eq .chezmoi.hostname "archlaptop" }}
     timeout = 90
+{{- end }}
+{{- if eq .chezmoi.hostname "archlinux" }}
+    timeout = 330
+{{- end }}
     on-timeout = loginctl lock-session
 }
 
 listener {
-    timeout = 95
+{{- if eq .chezmoi.hostname "archlaptop" }}
+    timeout = 120
+{{- end }}
+{{- if eq .chezmoi.hostname "archlinux" }}
+    timeout = 360
+{{- end }}
     on-timeout = hyprctl dispatch dpms off
     on-resume = hyprctl dispatch dpms on
 }
 
+{{- if eq .chezmoi.hostname "archlaptop" }}
 listener {
-    timeout = 120
+    timeout = 150
     on-timeout = systemctl suspend
 }
+{{- end }}
 
