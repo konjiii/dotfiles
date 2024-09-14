@@ -37,8 +37,8 @@ bind = $mainMod SHIFT, S, exec, grim -g "$(slurp)" ~/media/Pictures/screenshots/
 bind = , F8, exec, ~/.config/hypr/scripts/gpu-screen-recorder/save-replay.sh
 {{- end }}
 
-# restart waybar
-bind = $mainMod SHIFT, R, exec, killall waybar; waybar
+# restart waybar and hypridle
+bind = $mainMod SHIFT, R, exec, killall waybar; killall hypridle; waybar; hypridle
 
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 bind = $mainMod, RETURN, exec, $terminal # open terminal
