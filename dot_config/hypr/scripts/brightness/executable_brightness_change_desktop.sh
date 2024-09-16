@@ -15,8 +15,9 @@ if ! [[ $change =~ $re ]] ; then
 fi
 
 # calculate the new brightness
-brightness=$(ddcutil getvcp 10 | awk '{print $9}' | tr -d ,)
-max_brightness=$(ddcutil getvcp 10 | awk '{print $13}')
+brightnessdata=$(ddcutil getvcp 10)
+brightness=$(echo $brightnessdata | awk '{print $9}' | tr -d ,)
+max_brightness=$(echo $brightnessdata | awk '{print $13}')
 change=$(($change * $max_brightness / 100))
 brightness=$(($brightness + $change))
 
@@ -43,3 +44,5 @@ if [ "$#" -eq 2 ] && [ "$2" = "--notif" ]; then
     -h int:value:"$brightness" "Brightness: ${brightness}%"
 
 fi
+
+
