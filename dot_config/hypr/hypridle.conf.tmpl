@@ -6,16 +6,13 @@ general {
     after_sleep_cmd = hyprctl dispatch dpms on
 }
 
-listener {
 {{- if eq .chezmoi.hostname "archlaptop" }}
+listener {
     timeout = 60
-{{- end }}
-{{- if eq .chezmoi.hostname "archlinux" }}
-    timeout = 300
-{{- end }}
     on-timeout = brightnessctl -s set 1% # command to run when timeout has passed.
     on-resume = brightnessctl -r  # command to run when activity is detected after timeout has fired.
 }
+{{- end }}
 
 listener {
 {{- if eq .chezmoi.hostname "archlaptop" }}
