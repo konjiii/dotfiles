@@ -38,7 +38,8 @@ bind = , F8, exec, ~/.config/hypr/scripts/gpu-screen-recorder/save-replay.sh
 {{- end }}
 
 # restart waybar and hypridle
-bind = $mainMod SHIFT, R, exec, killall waybar; killall hypridle; waybar; hypridle
+bind = $mainMod SHIFT, R, exec, killall waybar; waybar
+bind = $mainMod SHIFT, R, exec, killall hypridle; hypridle
 
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 bind = $mainMod, RETURN, exec, $terminal # open terminal
