@@ -1,20 +1,18 @@
 # Sets user-defined palette
 palette = 'catppuccin_mocha'
 
-format = '''
-[](text)$os$username[](bg:blue fg:text)$directory[](fg:blue)$all
-'''
+format = '''$all$directory$character'''
 
 [character]
 # Note the use of Catppuccin color 'maroon'
-success_symbol = '[❯](blue)'
-error_symbol = '[❯](red)'
-vimcmd_symbol = '[❮](green)'
+success_symbol = '[λ](white)'
+error_symbol = '[λ](red)'
+vimcmd_symbol = '[λ](green)'
 
-[os]
-style = 'fg:crust bg:text'
-format = '[]($style)'
-disabled = false
+# [os]
+# style = 'fg:crust bg:text'
+# format = '[]($style)'
+# disabled = false
 
 [username]
 show_always = true
@@ -27,15 +25,15 @@ disabled = true
 truncation_length = 4
 truncation_symbol = '…/'
 # Catppuccin 'lavender'
-style = 'fg:bold crust bg:blue'
+style = 'fg:bold blue'
 format = '[ $path ]($style)'
 
-[directory.substitutions]
-'Documents' = '󰈙'
-'Downloads' = ''
-'Music' = ''
-'Pictures' = ''
-'~/mhome' = ''
+# [directory.substitutions]
+# 'Documents' = '󰈙'
+# 'Downloads' = ''
+# 'Music' = ''
+# 'Pictures' = ''
+# '~/mhome' = ''
 
 [aws]
 format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
