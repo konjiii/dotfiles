@@ -8,36 +8,26 @@ general {
 
 {{- if eq .chezmoi.hostname "archlaptop" }}
 listener {
-    timeout = 60
+    timeout = 300
     on-timeout = brightnessctl -s set 1% # command to run when timeout has passed.
     on-resume = brightnessctl -r  # command to run when activity is detected after timeout has fired.
 }
 {{- end }}
 
 listener {
-{{- if eq .chezmoi.hostname "archlaptop" }}
-    timeout = 90
-{{- end }}
-{{- if eq .chezmoi.hostname "archlinux" }}
     timeout = 330
-{{- end }}
     on-timeout = loginctl lock-session
 }
 
 listener {
-{{- if eq .chezmoi.hostname "archlaptop" }}
-    timeout = 120
-{{- end }}
-{{- if eq .chezmoi.hostname "archlinux" }}
     timeout = 360
-{{- end }}
     on-timeout = hyprctl dispatch dpms off
     on-resume = hyprctl dispatch dpms on
 }
 
 {{- if eq .chezmoi.hostname "archlaptop" }}
 listener {
-    timeout = 150
+    timeout = 390
     on-timeout = systemctl suspend
 }
 {{- end }}
