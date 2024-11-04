@@ -52,6 +52,7 @@ eval "$(starship init zsh)"
 
 autoload -U compinit; compinit
 
+eval "$(pyenv init -)"
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
