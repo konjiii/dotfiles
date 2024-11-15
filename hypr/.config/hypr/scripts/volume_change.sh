@@ -14,12 +14,12 @@ mute="$(pamixer --get-mute)"
 if [[ $volume == 0 || "$mute" == true ]]; then
     # Show the sound muted notification
     dunstify -a "changeVolume" -u low -i audio-volume-muted -h string:x-dunst-stack-tag:$msgTag \
-    "Volume: ${volume}%" "Volume muted" 
+        "Volume: ${volume}%" "Volume muted"
 else
     # Show the volume notification
     dunstify -a "changeVolume" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
-    -h int:value:"$volume" "Volume: ${volume}%"
+        -h int:value:"$volume" "Volume: ${volume}%"
 fi
 
 # Play the volume changed sound
-canberra-gtk-play -i audio-volume-change -d "changeVolume"
+# canberra-gtk-play -i audio-volume-change -d "changeVolume"
