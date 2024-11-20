@@ -12,8 +12,9 @@ eval "$(atuin init zsh)"
 # print system information
 neofetch
 
-# set editor as neovim
+# set editor and manpager as neovim
 export EDITOR=nvim
+export MANPAGER='nvim +Man!'
 
 # turn off vim mode
 bindkey -e
