@@ -9,8 +9,10 @@
 # initialize atuin
 eval "$(atuin init zsh)"
 
-# print system information
-neofetch
+# print system information if not in tmux
+if [[ $TMUX = "" ]]; then
+    neofetch
+fi
 
 # set editor and manpager as neovim
 export EDITOR=nvim
