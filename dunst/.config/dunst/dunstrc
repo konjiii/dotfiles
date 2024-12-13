@@ -27,7 +27,7 @@
     width = 300
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = 75
 
     # Position the notification in the top right corner
     origin = top-center
@@ -463,10 +463,15 @@
 #    urgency = normal
 #
 [stack-volumes]
-   appname = "changeVolume"
-   set_stack_tag = "volume"
-   timeout = "3"
-   origin = "center"
-   history_ignore = "true"
+    appname = "changeVolume"
+    set_stack_tag = "volume"
+    timeout = "3"
+    history_ignore = "true"
+
+[stack-brightness]
+    appname = "changeBrightness"
+    set_stack_tag = "brightness"
+    timeout = "3"
+    history_ignore = "true"
 
 # vim: ft=cfg
