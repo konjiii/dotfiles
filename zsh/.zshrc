@@ -6,6 +6,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# start uwsm selector automatically to quickly start graphical session
+if [[ $TMUX = "" ]] && uwsm check may-start && uwsm select; then
+	exec systemd-cat -t uwsm_start uwsm start default
+fi
+
 # initialize atuin
 eval "$(atuin init zsh)"
 
