@@ -138,4 +138,8 @@ eval $(thefuck --alias)
 
 autoload -U compinit; compinit
 
+# initialize pyenv
 eval "$(pyenv init -)"
+
+# fzf functionality
+source <(fzf --zsh)
