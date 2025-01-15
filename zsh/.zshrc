@@ -7,7 +7,7 @@
 [[ $- != *i* ]] && return
 
 # start uwsm selector automatically to quickly start graphical session
-if [[ $TMUX = "" ]] && uwsm check may-start && uwsm select; then
+if [[ $TMUX = "" ]] && [[ $(grep -i Microsoft /proc/version) = "" ]] && uwsm check may-start && uwsm select; then
 	exec systemd-cat -t uwsm_start uwsm start default
 fi
 
