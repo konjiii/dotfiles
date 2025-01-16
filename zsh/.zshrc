@@ -117,6 +117,10 @@ if [[ $TMUX = "" ]]; then
     neofetch
 fi
 
+# set editor and manpager as neovim
+export EDITOR=nvim
+export MANPAGER='nvim +Man!'
+
 # set aliases
 alias git-clone-all="git branch -r | grep -v '\->' | while read remote; do git branch --track \"\${remote#origin/}\" \"\$remote\"; done"
 alias update="sudo pacman -Syu && paru"
