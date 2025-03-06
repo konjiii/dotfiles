@@ -16,11 +16,8 @@
         "privacy",
     ],
     "modules-right": [
-        "gamemode",
-        "pulseaudio",
-        "network",
-        "bluetooth",
         "group/sysinfo",
+        "pulseaudio",
         "battery",
         "tray",
     ],
@@ -56,27 +53,28 @@
         "format-window-separator": "",
         "window-rewrite-default": "",
         "window-rewrite": {
-            "class<discord>": " ",
-            "class<WebCord>": " ",
-            "title<.*youtube.*>": " ", // Windows whose titles contain "youtube"
-            "title<.*reddit.*>": " 󰑍", // Windows whose titles contain "reddit"
-            "title<.*github.*>": " ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-            "class<floorp>": " ", // Windows whose classes are "firefox"
-            "class<code.*>": " 󰨞",
-            "class<spotify>": " ",
-            "class<steam>": " ",
-            "class<kitty>": " ",
+            "class<discord>": "  ",
+            "class<WebCord>": "  ",
+            "title<.*youtube.*>": "  ", // Windows whose titles contain "youtube"
+            "title<.*reddit.*>": " 󰑍 ", // Windows whose titles contain "reddit"
+            "title<.*github.*>": "  ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+            "class<floorp>": "  ", // Windows whose classes are "firefox"
+            "class<code.*>": " 󰨞 ",
+            "class<spotify>": "  ",
+            "class<steam>": "  ",
+            "class<kitty>": "  ",
         },
     },
     "hyprland/window": {
         "format": "{class}",
+        "icon": true,
     },
     "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
     "clock": {
-        "format": "{:%Y-%m-%d %H:%M}  ",
+        "format": "{:%Y-%m-%d %H:%M} ",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
                     "mode"          : "month",
@@ -95,12 +93,10 @@
                     "on-click-right": "mode",
                     "on-click-forward": "tz_up",
                     "on-click-backward": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
                     }
     },
     "disk": {
-        "format": "{used}/{total} ",
+        "format": "{used}/{total}  ",
         "path": "/",
     },
     "cpu": {
@@ -108,29 +104,14 @@
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
-    },
-    "bluetooth": {
-        "format-connected": " connected {num_connections}",
-        "tooltip": true,
-        "tooltip-format": "{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias} 󰁹{device_battery_percentage}%",
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format": "{}%  "
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": "{volume}%  {icon}",
-        "format-muted": "{volume}%  ",
+        "format-muted": "{volume}% ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
