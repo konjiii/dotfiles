@@ -1,0 +1,5 @@
+vim.keymap.set("n", "<leader>git", vim.cmd.Git)
+vim.keymap.set("n", "<leader>gtd", vim.cmd.Gdiff)
+vim.keymap.set("n", "<leader>gtb", vim.cmd.GBrowse)
+vim.keymap.set("n", "<leader>gtl", ":Git log<CR>")
+vim.keymap.set("n", "<leader>gts", ":Git status<CR>")
