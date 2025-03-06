@@ -7,5 +7,10 @@ require("conform").setup({
 		cpp = { "clang-format" },
 		ocaml = { "ocamlformat" },
 		sh = { "shfmt" },
+		svelte = { "prettier" },
+		html = { "prettier" },
+		css = { "prettier" },
+		javascript = { "prettier" },
+		typescript = { "prettier" },
 	},
 })
