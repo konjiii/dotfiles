@@ -24,7 +24,7 @@ vim.keymap.set("v", "<leader>x", '"+x')
 vim.keymap.set("v", "d", '"_d')
 
 -- select all text (and keep cursor where it was)
-vim.keymap.set("n", "<C-a>", "ggVG")
+-- vim.keymap.set("n", "<C-a>", "ggVG")
 
 -- save file while in insert mode
 vim.keymap.set("i", "<C-s>", "<ESC>:w<CR>a")
