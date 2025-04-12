@@ -112,8 +112,8 @@ if [[ $TMUX = "" ]] && [[ $(grep -i Microsoft /proc/version) = "" ]] && uwsm che
 	exec systemd-cat -t uwsm_start uwsm start default
 fi
 
-# add ~/bin to path
-PATH=$PATH:~/bin
+# add ~/.local/bin to path
+export PATH="/home/konji/.local/bin:$PATH"
 
 # print system information if not in tmux
 if [[ $TMUX = "" ]]; then
@@ -150,6 +150,9 @@ eval "$(pyenv init -)"
 
 # fzf functionality
 source <(fzf --zsh)
+
+# source sensitive variables
+source "/home/konji/.secrets.env"
 
 # pnpm
 export PNPM_HOME="/home/konji/.local/share/pnpm"
