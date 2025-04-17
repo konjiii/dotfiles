@@ -12,5 +12,6 @@ require("conform").setup({
 		css = { "prettier" },
 		javascript = { "prettier" },
 		typescript = { "prettier" },
+		zig = { "zigfmt" },
 	},
 })
