@@ -33,7 +33,6 @@ end)
 -- setup mason
 require("mason").setup({})
 require("mason-lspconfig").setup({
-	ensure_installed = { "pyright", "lua_ls", "clangd" },
 	handlers = {
 		lsp_zero.default_setup,
 		lua_ls = function()
