@@ -1,3 +1,4 @@
+-- configuration that changes the looks of wezterm
 local looks = {}
 
 function looks.apply_to_config(config)

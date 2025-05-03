@@ -1,3 +1,4 @@
+-- configuration that dictates the font
 local wezterm = require("wezterm")
 
 local font = {}
