@@ -2,7 +2,6 @@
 local wezterm = require("wezterm")
 -- plugins
 require("plugins")
--- require("resurrect")
 
 -- import module configs
 local looks = require("looks")
