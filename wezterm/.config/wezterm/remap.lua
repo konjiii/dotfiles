@@ -1,5 +1,6 @@
 -- configuration that handles keymaps
 local wezterm = require("wezterm")
+local sessionizer = require("sessionizer")
 local act = wezterm.action
 
 local remap = {}
@@ -47,27 +48,17 @@ function remap.apply_to_config(config)
 			key = "l",
 			action = act.MoveTabRelative(1),
 		},
-		-- {
-		-- 	mods = "LEADER",
-		-- 	key = "s",
-		-- 	action = wezterm.action.ShowLauncherArgs({ flags = "WORKSPACES" }),
-		-- },
-		-- {
-		-- 	key = "w", -- You can change this to any key, e.g., "n" or "s"
-		-- 	mods = "LEADER",
-		-- 	action = wezterm.action.PromptInputLine({
-		-- 		description = "Enter workspace name",
-		-- 		action = wezterm.action_callback(function(window, pane, line)
-		-- 			if line then
-		-- 				wezterm.mux.spawn_window({ workspace = line })
-		-- 			end
-		-- 		end),
-		-- 	}),
-		-- },
+		-- workspace switching
 		{
 			key = "s",
 			mods = "LEADER",
 			action = WorkspaceSwitcher.switch(),
+		},
+		-- sessionizer
+		{
+			key = "r",
+			mods = "LEADER",
+			action = Sessionizer.show(sessionizer.schema),
 		},
 	}
 
