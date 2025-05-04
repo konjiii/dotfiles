@@ -7,6 +7,7 @@ require("plugins")
 local looks = require("looks")
 local font = require("font")
 local multiplexing = require("multiplexing")
+local remap = require("remap")
 
 local config = wezterm.config_builder()
 
@@ -14,5 +15,6 @@ local config = wezterm.config_builder()
 looks.apply_to_config(config)
 font.apply_to_config(config)
 multiplexing.apply_to_config(config)
+remap.apply_to_config(config)
 
 return config
