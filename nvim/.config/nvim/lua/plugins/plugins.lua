@@ -6,9 +6,16 @@ return {
 		-- or                            , branch = "0.1.x",
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
-	-- theme for neovim
-	-- { "catppuccin/nvim", name = "catppuccin" },
+	-- themes for neovim
+	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rose-pine/neovim", name = "rose-pine" },
+	{ "morhetz/gruvbox", name = "gruvbox" },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 	-- treesitter for better syntax highlighting
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	-- for viewing the treesitter tree
