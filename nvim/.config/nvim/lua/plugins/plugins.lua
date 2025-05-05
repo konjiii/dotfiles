@@ -7,7 +7,8 @@ return {
 		dependencies = { { "nvim-lua/plenary.nvim" } },
 	},
 	-- theme for neovim
-	{ "catppuccin/nvim", name = "catppuccin" },
+	-- { "catppuccin/nvim", name = "catppuccin" },
+	{ "rose-pine/neovim", name = "rose-pine" },
 	-- treesitter for better syntax highlighting
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	-- for viewing the treesitter tree
@@ -63,22 +64,6 @@ return {
 			vim.g.rustfmt_autosave = 1
 		end,
 	},
-	-- -- seamless navigation between nvim and tmux
-	-- {
-	-- 	"christoomey/vim-tmux-navigator",
-	-- 	cmd = {
-	-- 		"TmuxNavigateLeft",
-	-- 		"TmuxNavigateDown",
-	-- 		"TmuxNavigateUp",
-	-- 		"TmuxNavigateRight",
-	-- 	},
-	-- 	keys = {
-	-- 		{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-	-- 		{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-	-- 		{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-	-- 		{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-	-- 	},
-	-- },
 	-- seamless navigation between nvim and wezterm panes
 	{
 		"mrjones2014/smart-splits.nvim",
@@ -165,6 +150,7 @@ return {
 			},
 		},
 	},
+	-- highlight colorcodes like #f283f1
 	{
 		"norcalli/nvim-colorizer.lua",
 		event = "BufReadPre",
