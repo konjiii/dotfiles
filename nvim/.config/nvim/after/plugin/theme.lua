@@ -52,7 +52,7 @@ require("catppuccin").setup({
 local function get_theme()
 	local theme_file = io.open(os.getenv("HOME") .. "/.theme", "r")
 	if theme_file == nil then
-		return ""
+		return "catppuccin"
 	end
 	local contents = theme_file:read("*a")
 	theme_file:close()
@@ -63,14 +63,14 @@ local function get_theme()
 	-- get line with neovim=...
 	local idx, idx2 = string.find(contents, "neovim=" .. pattern)
 	if idx == nil then
-		return ""
+		return "catppuccin"
 	end
 	contents = string.sub(contents, idx, idx2)
 
 	-- get part inside ""
 	idx, idx2 = string.find(contents, pattern)
 	if idx == nil then
-		return ""
+		return "catppuccin"
 	end
 	contents = string.sub(contents, idx + 1, idx2 - 1)
 
