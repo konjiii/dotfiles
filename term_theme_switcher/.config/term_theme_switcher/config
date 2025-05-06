@@ -1,0 +1,25 @@
+programs=("neovim" "wezterm")
+
+names=(
+    "catppuccin (mocha)"
+    "rose-pine"
+    "gruvbox    (dark)"
+    "everforest (dark)"
+    "tokyonight (moon)"
+)
+
+neovim=(
+    "catppuccin"
+    "rose-pine"
+    "gruvbox"
+    "everforest"
+    "tokyonight"
+)
+
+wezterm=(
+    "Catppuccin Mocha"
+    "rose-pine"
+    "Gruvbox Dark (Gogh)"
+    "Everforest Dark (Gogh)"
+    "Tokyo Night Moon"
+)

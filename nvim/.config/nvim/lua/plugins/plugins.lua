@@ -10,6 +10,7 @@ return {
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "rose-pine/neovim", name = "rose-pine" },
 	{ "morhetz/gruvbox", name = "gruvbox" },
+	{ "sainnhe/everforest", name = "everforest" },
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
