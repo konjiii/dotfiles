@@ -129,6 +129,7 @@ alias git-clone-all="git branch -r | grep -v '\->' | while read remote; do git b
 alias update="sudo pacman -Syu && paru"
 alias update-package-list="pacman -Qqne > $HOME/mhome/coding/bash/bash_scripts/install_scripts/arch_linux/laptop/packages/pacman;\
     pacman -Qqme > $HOME/mhome/coding/bash/bash_scripts/install_scripts/arch_linux/laptop/packages/aur"
+alias imgcat="wezterm imgcat"
 
 # make cd command to go to mhome
 cd(){ builtin cd "${1-$HOME/mhome}" "${@:2}"; }
