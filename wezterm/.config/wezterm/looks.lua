@@ -29,7 +29,7 @@ local function get_theme()
 	return contents
 end
 
-local function set_tab_bar()
+local function is_clipse()
 	local env = os.getenv("WEZTERM_CLIPSE")
 
 	if env == "true" then
@@ -41,8 +41,8 @@ end
 
 function looks.apply_to_config(config)
 	config.color_scheme = get_theme()
-	config.enable_scroll_bar = true
-	config.enable_tab_bar = set_tab_bar()
+	config.enable_scroll_bar = is_clipse()
+	config.enable_tab_bar = is_clipse()
 end
 
 return looks
