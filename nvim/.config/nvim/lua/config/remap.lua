@@ -43,3 +43,11 @@ vim.keymap.set("v", "H", "^")
 vim.keymap.set("n", "<leader>rpa", ":%s//gc<left><left><left>")
 vim.keymap.set("n", "<leader>rpl", ":s//gc<left><left><left>")
 vim.keymap.set("v", "<leader>rps", ":s//gc<left><left><left>")
+
+-- go to next and previous diagnostic
+vim.keymap.set("n", "]d", function()
+    vim.diagnostic.jump({ count = 1, float = true })
+end)
+vim.keymap.set("n", "[d", function()
+    vim.diagnostic.jump({ count = -1, float = true })
+end)
