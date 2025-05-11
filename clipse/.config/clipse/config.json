@@ -6,8 +6,8 @@
     "tempDir": "tmp_files",
     "imageDisplay":  {
         "type": "kitty",
-        "scaleX": 24,
-        "scaleY": 24,
+        "scaleX": 22,
+        "scaleY": 22,
         "heightCut": 13
     }
 }
