@@ -44,6 +44,8 @@ return {
 			{ "L3MON4D3/LuaSnip" },
 		},
 	},
+	-- vscode like lsp icons
+	"onsails/lspkind.nvim",
 	-- ctrl+/ to comment out block of code
 	"numToStr/Comment.nvim",
 	-- indentation guides
