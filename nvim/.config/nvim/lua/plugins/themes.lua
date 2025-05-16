@@ -15,4 +15,5 @@ return {
         priority = 1000,
         opts = {},
     },
+    { "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000 },
 }

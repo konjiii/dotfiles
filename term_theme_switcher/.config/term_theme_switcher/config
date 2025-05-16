@@ -6,6 +6,7 @@ names=(
     "gruvbox    (dark)"
     "everforest (dark)"
     "tokyonight (moon)"
+    "kanagawa   (wave)"
 )
 
 neovim=(
@@ -14,6 +15,7 @@ neovim=(
     "gruvbox"
     "everforest"
     "tokyonight"
+    "kanagawa"
 )
 
 wezterm=(
@@ -22,4 +24,5 @@ wezterm=(
     "Gruvbox Dark (Gogh)"
     "Everforest Dark (Gogh)"
     "Tokyo Night Moon"
+    "Kanagawa (Gogh)"
 )
