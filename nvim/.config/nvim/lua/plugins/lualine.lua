@@ -22,33 +22,35 @@ return {
             },
         },
         sections = {
-            lualine_a = { "mode" },
+            lualine_a = {
+                {
+                    "mode",
+                    fmt = function(str)
+                        return str:sub(1, 1)
+                    end,
+                },
+            },
             lualine_b = {
+                "branch",
                 {
                     "filename",
-                    file_status = true, -- Displays file status (readonly status, modified status)
-                    newfile_status = true, -- Display new file status (new file means no write after created)
+                    file_status = true,
+                    newfile_status = true,
                     path = 0,
-                    -- 0: Just the filename
-                    -- 2: Relative path
-                    -- 3: Absolute path
-                    -- 4: Absolute path, with tilde as the home directory
-                    -- 5: Filename and parent dir, with tilde as the home directory
 
-                    shorting_target = 41, -- Shortens path to leave 40 spaces in the window
-                    -- for other components. (terrible name, any suggestions?)
+                    shorting_target = 41,
+
                     symbols = {
-                        modified = "[+]", -- Text to show when the file is modified.
-                        readonly = "[-]", -- Text to show when the file is non-modifiable or readonly.
-                        unnamed = "[No Name]", -- Text to show for unnamed buffers.
-                        newfile = "[New]", -- Text to show for newly created file before first write
+                        modified = "[+]",
+                        readonly = "[-]",
+                        unnamed = "[No Name]",
+                        newfile = "[New]",
                     },
                 },
                 "diagnostics",
             },
             lualine_c = { "filesize" },
             lualine_x = {
-                "encoding",
                 "fileformat",
                 {
                     "filetype",
