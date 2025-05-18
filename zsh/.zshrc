@@ -156,6 +156,9 @@ source <(fzf --zsh)
 # source sensitive variables
 source "/home/konji/.secrets.env"
 
+# disable exit using ctrl-D
+set -o ignoreeof
+
 # pnpm
 export PNPM_HOME="/home/konji/.local/share/pnpm"
 case ":$PATH:" in
