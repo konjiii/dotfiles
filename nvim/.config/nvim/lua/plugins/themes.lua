@@ -8,7 +8,7 @@ return {
     },
     { "rose-pine/neovim", name = "rose-pine", priority = 1000 },
     { "morhetz/gruvbox", priority = 1000 },
-    { "sainnhe/everforest", priority = 1000 },
+    { "sainnhe/everforest", priority = 1000, opts = { background = "hard" } },
     {
         "folke/tokyonight.nvim",
         lazy = false,
