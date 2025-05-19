@@ -20,6 +20,7 @@ return {
             javascript = { "prettier" },
             typescript = { "prettier" },
             zig = { "zigfmt" },
+            go = { "gofmt" },
         },
     },
 }
