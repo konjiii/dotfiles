@@ -1,4 +1,4 @@
-programs=("neovim" "wezterm")
+programs=("neovim" "ghostty")
 
 names=(
     "catppuccin (mocha)"
@@ -18,11 +18,11 @@ neovim=(
     "kanagawa"
 )
 
-wezterm=(
-    "Catppuccin Mocha"
+ghostty=(
+    "catppuccin-mocha"
     "rose-pine"
-    "Gruvbox Dark (Gogh)"
-    "Everforest Dark (Gogh)"
-    "Tokyo Night Moon"
-    "Kanagawa (Gogh)"
+    "GruvboxDark"
+    "Everforest Dark - Hard"
+    "tokyonight_moon"
+    "Kanagawa Wave"
 )

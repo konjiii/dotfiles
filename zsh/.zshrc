@@ -107,13 +107,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# add ~/.local/bin to path
+export PATH="/home/konji/.local/bin:$PATH"
+
 # start uwsm selector automatically to quickly start graphical session
 if [[ $TMUX = "" ]] && [[ $(grep -i Microsoft /proc/version) = "" ]] && uwsm check may-start -q && uwsm select; then
 	exec systemd-cat -t uwsm_start uwsm start default
 fi
-
-# add ~/.local/bin to path
-export PATH="/home/konji/.local/bin:$PATH"
 
 # print system information if not in tmux
 if [[ $TMUX = "" ]]; then
