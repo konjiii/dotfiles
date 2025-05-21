@@ -1,7 +1,7 @@
 -- display images inside neovim
 return {
     "folke/snacks.nvim",
-    enabled = false,
+    enabled = true,
     ---@type snacks.Config
     opts = {
         image = {
