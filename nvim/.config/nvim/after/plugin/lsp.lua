@@ -58,7 +58,7 @@ cmp.setup({
             show_labelDetails = false,
 
             -- The function below will be called before any actual modifications from lspkind
-            before = function(entry, vim_item)
+            before = function(_, vim_item)
                 -- remove labelDetails CUZ show_labelDetails = false DOES NOT WORK
                 vim_item.menu = ""
 
@@ -80,3 +80,13 @@ cmp.setup.filetype({ "sql", "mysql", "plsql" }, {
         { name = "buffer" },
     },
 })
+
+-- inlay diagnostics instead of at end of line
+vim.diagnostic.config({
+    virtual_lines = { current_line = true },
+    virtual_text = { current_line = false },
+    underline = true,
+})
+
+-- turn on inlay hints
+-- vim.lsp.inlay_hint.enable()

@@ -24,13 +24,8 @@ vim.opt.scrolloff = 8 -- keep 8 lines above/below cursor
 vim.opt.signcolumn = "yes" -- always show sign column
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
-
 vim.opt.colorcolumn = "80" -- highlight column 80
 
 vim.g.mapleader = " " -- set leader key to space
 
 vim.opt.spell = true -- enable spell checking
-
--- turn on inlay hints
--- vim.lsp.inlay_hint.enable()
