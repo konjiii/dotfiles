@@ -12,13 +12,12 @@ return {
         require("lazy.core.loader").add_to_rtp(plugin)
         require("nvim-treesitter.query_predicates")
     end,
-    keys = {
-        {
-            "<leader>ff",
-            function()
-                require("telescope.builtin").find_files({ hidden = true })
-            end,
-        },
-        { "<leader>ts", require("telescope.builtin").treesitter },
-    },
+    config = function()
+        local builtin = require("telescope.builtin")
+
+        vim.keymap.set("n", "<leader>ff", function()
+            builtin.find_files({ hidden = true })
+        end)
+        vim.keymap.set("n", "<leader>ts", builtin.treesitter)
+    end,
 }
