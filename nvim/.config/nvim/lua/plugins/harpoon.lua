@@ -1,6 +1,6 @@
 -- quick switch between buffers
 return {
-    "theprimeagrn/harpoon",
+    "theprimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
     -- stylua: ignore
