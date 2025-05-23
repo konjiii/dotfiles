@@ -21,6 +21,8 @@ return {
             typescript = { "prettier" },
             zig = { "zigfmt" },
             go = { "gofmt" },
+            bib = { "bibtex-tidy" },
+            tex = { "tex-fmt" },
         },
     },
 }
