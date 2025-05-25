@@ -140,8 +140,6 @@ then
     cd
 fi
 
-# initialize thefuck
-eval $(thefuck --alias)
 # initialize cargo
 . "$HOME/.cargo/env"
 
