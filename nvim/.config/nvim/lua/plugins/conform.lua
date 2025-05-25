@@ -1,11 +1,7 @@
 -- auto formatters
 return {
     "stevearc/conform.nvim",
-    init = function()
-        require("conform").formatters.stylua = {
-            prepend_args = { "--indent-type", "Spaces" },
-        }
-    end,
+    init = function() end,
     opts = {
         format_after_save = {},
         formatters_by_ft = {
@@ -23,6 +19,14 @@ return {
             go = { "gofmt" },
             bib = { "bibtex-tidy" },
             tex = { "tex-fmt" },
+        },
+        formatters = {
+            stylua = {
+                prepend_args = { "--indent-type", "Spaces" },
+            },
+            ["tex-fmt"] = {
+                prepend_args = { "-n" },
+            },
         },
     },
 }
