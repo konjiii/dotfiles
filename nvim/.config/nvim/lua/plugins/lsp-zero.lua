@@ -12,6 +12,7 @@ return {
         -- Autocompletion
         { "hrsh7th/nvim-cmp" },
         { "hrsh7th/cmp-nvim-lsp" },
+        { "hrsh7th/cmp-path" }, -- path-completion
         { "L3MON4D3/LuaSnip" },
         -- vscode like lsp icons
         { "onsails/lspkind.nvim" },
