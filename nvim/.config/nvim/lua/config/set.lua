@@ -29,3 +29,6 @@ vim.opt.colorcolumn = "80" -- highlight column 80
 vim.g.mapleader = " " -- set leader key to space
 
 vim.opt.spell = true -- enable spell checking
+
+vim.go.ignorecase = true -- case insensitive search
+vim.go.smartcase = true -- case sensitive if case in search
