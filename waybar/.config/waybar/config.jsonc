@@ -8,7 +8,6 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "custom/media",
         "hyprland/window",
     ],
     "modules-center": [
@@ -66,7 +65,7 @@
         },
     },
     "hyprland/window": {
-        "format": "{class}",
+        "format": "",
         "icon": true,
     },
     "tray": {
@@ -133,17 +132,5 @@
         "icon-size": 20,
         "tooltip": true,
         "tooltip-format": "Games running: {count}"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
