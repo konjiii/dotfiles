@@ -4,3 +4,6 @@ font-size = 15
 
 # theme
 theme = catppuccin-mocha
+
+#keybinds
+keybind = ctrl+enter=unbind
