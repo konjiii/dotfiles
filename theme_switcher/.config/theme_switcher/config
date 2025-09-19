@@ -19,10 +19,10 @@ neovim=(
 )
 
 ghostty=(
-    "catppuccin-mocha"
-    "rose-pine"
-    "GruvboxDark"
-    "Everforest Dark - Hard"
-    "tokyonight_moon"
+    "Catppuccin Mocha"
+    "Rose Pine"
+    "Gruvbox Dark"
+    "Everforest Dark   Hard"
+    "TokyoNight Moon"
     "Kanagawa Wave"
 )
