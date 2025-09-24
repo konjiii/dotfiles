@@ -16,3 +16,5 @@
 	recurse = true
 [push]
 	recurseSubmodules = on-demand
+[core]
+	pager = cat
