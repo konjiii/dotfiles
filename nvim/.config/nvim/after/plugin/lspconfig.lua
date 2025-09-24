@@ -1,7 +1,8 @@
 -- setup language servers.
-local lspconfig = require("lspconfig")
+
 -- configure pyright
--- lspconfig.pyright.setup({
+-- vim.lsp.enable("pyright")
+-- vim.lsp.config("pyright", {
 -- 	settings = {
 -- 		python = {
 -- 			analysis = {
@@ -23,15 +24,16 @@ local lspconfig = require("lspconfig")
 -- })
 
 -- rust_analyzer lsp configuration
-lspconfig.rust_analyzer.setup({
-    -- Server-specific settings. See `:help lspconfig-setup`
+vim.lsp.enable("rust_analyzer")
+vim.lsp.config("rust_analyzer", {
     settings = {
         ["rust-analyzer"] = {},
     },
 })
 
 -- lua_ls config
-lspconfig.lua_ls.setup({
+vim.lsp.enable("lua_ls")
+vim.lsp.config("lua_ls", {
     on_init = function(client)
         if client.workspace_folders then
             local path = client.workspace_folders[1].name
@@ -66,7 +68,8 @@ lspconfig.lua_ls.setup({
     },
 })
 
-lspconfig.texlab.setup({
+vim.lsp.enable("texlab")
+vim.lsp.config("texlab", {
     settings = {
         texlab = {
             diagnostics = {
