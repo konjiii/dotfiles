@@ -32,3 +32,5 @@ vim.opt.spell = true -- enable spell checking
 
 vim.go.ignorecase = true -- case insensitive search
 vim.go.smartcase = true -- case sensitive if case in search
+
+vim.cmd([[cab cc CodeCompanion]]) -- expand cc to CodeCompanion in command mode
