@@ -12,17 +12,24 @@ return {
                 },
             },
         },
-    },
-    memory = {
-        opts = {
+        memory = {
+            opts = {
+                chat = {
+                    enabled = true,
+                },
+            },
+        },
+        display = {
             chat = {
-                enabled = true,
+                window = {
+                    width = 0.4,
+                },
             },
         },
     },
     keys = {
         { "<C-a>", "<cmd>CodeCompanionActions<cr>", desc = "Code Companion Actions", mode = "n" },
-        { "<leader>a", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Code Companion Chat", mode = "n" },
+        { "<localleader>a", "<cmd>CodeCompanionChat Toggle<cr>", desc = "Code Companion Chat", mode = "n" },
         { "ga", "<cmd>CodeCompanionChat Add<cr>", desc = "Code Companion Add", mode = "v" },
     },
 }
