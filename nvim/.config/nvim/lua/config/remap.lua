@@ -15,23 +15,13 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
--- copy and cut to windows clipboard
+-- copy and cut to os clipboard
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 vim.keymap.set("v", "<leader>x", '"+x')
 
 -- delete without yanking
 vim.keymap.set("v", "d", '"_d')
-
--- select all text (and keep cursor where it was)
--- vim.keymap.set("n", "<C-a>", "ggVG")
-
--- save file while in insert mode
-vim.keymap.set("i", "<C-s>", "<ESC>:w<CR>a")
-
--- undo and redo while while in insert mode
-vim.keymap.set("i", "<C-z>", "<ESC>ua")
-vim.keymap.set("i", "<C-y>", "<ESC><C-r>a")
 
 -- skip to end or beginning of line in normal and visual mode
 vim.keymap.set("n", "L", "$")
