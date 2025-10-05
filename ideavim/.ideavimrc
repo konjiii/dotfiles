@@ -1,0 +1,31 @@
+let mapleader = " "
+
+" move selected lines with J and K
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" indent/unindent multiple lines at once
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
+" delete enters without moving your position with J
+nnoremap J mzJ`z
+
+" ctrl+d and ctrl+u (moving up and down half a page) while keeping cursor in the middle
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" copy and cut to os clipboard
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+Y
+vnoremap <leader>x "+x
+
+" delete without yanking
+vnoremap d "_d
+
+" skip to end or beginning of line in normal and visual mode
+nnoremap L $
+nnoremap H ^
+vnoremap L $h
+vnoremap H ^
+
