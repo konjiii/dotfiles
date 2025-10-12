@@ -20,6 +20,7 @@ return {
             bib = { "bibtex-tidy" },
             tex = { "tex-fmt" },
             ocaml = { "ocamlformat" },
+            json = { "prettier" },
         },
         formatters = {
             stylua = {
