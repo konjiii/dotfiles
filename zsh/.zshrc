@@ -37,6 +37,7 @@ export MANPAGER='nvim +Man!'
 alias git-clone-all="git branch -r | grep -v '\->' | while read remote; do git branch --track \"\${remote#origin/}\" \"\$remote\"; done"
 alias update-package-list="pacman -Qqne > $HOME/mhome/coding/bash/install_scripts/arch_linux/laptop/packages/pacman;\
     pacman -Qqme > $HOME/mhome/coding/bash/install_scripts/arch_linux/laptop/packages/aur"
+alias chafa="TERM=xterm-ghostty chafa"
 
 # make cd command to go to mhome
 cd(){ builtin cd "${1-$HOME/mhome}" "${@:2}"; }
