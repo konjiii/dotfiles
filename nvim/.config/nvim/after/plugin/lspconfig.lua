@@ -1,28 +1,5 @@
 -- setup language servers.
 
--- configure pyright
--- vim.lsp.enable("pyright")
--- vim.lsp.config("pyright", {
--- 	settings = {
--- 		python = {
--- 			analysis = {
--- 				PythonPlatform = "Linux",
--- 				-- typeCheckingMode = "off",
--- 				-- reportGeneralTypeIssues = "none",
--- 				strictListInference = true,
--- 				strictDictionaryInference = true,
--- 				strictSetInference = true,
--- 				autoImportCompletions = true,
--- 				autoSearchPaths = true,
--- 				diagnosticMode = "workspace", -- or "openFilesOnly"
--- 				typeCheckingMode = "basic", -- or "off", "basic", "strict"
--- 				useLibraryCodeForTypes = true,
--- 			},
--- 		},
--- 	},
--- 	single_file_support = false, -- Set this to false to disable single file mode
--- })
-
 -- rust_analyzer lsp configuration
 vim.lsp.enable("rust_analyzer")
 vim.lsp.config("rust_analyzer", {
@@ -65,18 +42,5 @@ vim.lsp.config("lua_ls", {
     end,
     settings = {
         Lua = {},
-    },
-})
-
-vim.lsp.enable("texlab")
-vim.lsp.config("texlab", {
-    settings = {
-        texlab = {
-            diagnostics = {
-                ignoredPatterns = {
-                    "Underfull \\\\hbox \\(badness \\d+\\) in paragraph at lines \\d+--\\d+",
-                },
-            },
-        },
     },
 })
