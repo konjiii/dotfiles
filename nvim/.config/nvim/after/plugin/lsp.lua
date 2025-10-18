@@ -35,7 +35,6 @@ require("mason-lspconfig").setup({
         -- "zls",
         -- "lua_ls",
         -- "clangd",
-        -- "pyright",
         -- "bashls",
         -- "gopls",
         -- "rust_analyzer",
@@ -43,6 +42,7 @@ require("mason-lspconfig").setup({
         -- "asm_lsp",
         -- "svelte",
         -- "ts_ls",
+        -- "ty",
         -- only lsps can be ensure installed
         -- "stylua",
         -- "cpptools",
