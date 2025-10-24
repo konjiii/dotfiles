@@ -26,7 +26,7 @@ fi
 
 # print system information if not in tmux
 if [[ $TMUX = "" ]]; then
-    neofetch
+    fastfetch
 fi
 
 # set editor and manpager as neovim
