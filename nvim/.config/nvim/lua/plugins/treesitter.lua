@@ -16,7 +16,7 @@ return {
         },
         indent = {
             enable = true,
-            diable = { "python" },
+            disable = { "python", "ocaml" },
         },
     },
 }
