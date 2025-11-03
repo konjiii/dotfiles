@@ -1,7 +1,6 @@
 -- auto formatters
 return {
     "stevearc/conform.nvim",
-    init = function() end,
     opts = {
         format_after_save = {},
         formatters_by_ft = {
@@ -9,7 +8,8 @@ return {
             python = { "ruff_format", "ruff_organize_imports" },
             c = { "clang-format" },
             cpp = { "clang-format" },
-            sh = { "shfmt" },
+            sh = { "beautysh" },
+            zsh = { "beautysh" },
             svelte = { "prettier" },
             html = { "prettier" },
             css = { "prettier" },
@@ -21,6 +21,7 @@ return {
             tex = { "tex-fmt" },
             ocaml = { "ocamlformat" },
             json = { "prettier" },
+            rust = { "rustfmt" },
         },
         formatters = {
             stylua = {
