@@ -24,7 +24,7 @@ dap.adapters.python = function(cb, config)
     else
         cb({
             type = "executable",
-            command = "/home/konji/.local/share/nvim/mason/bin/debugpy-adapter",
+            command = "debugpy-adapter",
             options = {
                 source_filetype = "python",
             },
@@ -61,8 +61,12 @@ dap.configurations.python = {
             -- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
             -- You could adapt this - to for example use the `VIRTUAL_ENV` environment variable.
             local pyd = os.getenv("VIRTUAL_ENV")
+            local cwd = vim.fn.getcwd()
+
             if pyd == nil then
                 return "/bin/python"
+            elseif vim.fn.executable(cwd .. "/.venv/bin/python") == 1 then
+                return cwd .. "/.venv/bin/python"
             else
                 return pyd .. "/bin/python"
             end
