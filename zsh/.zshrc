@@ -1,5 +1,5 @@
-# add ~/.local/bin to path
-export PATH="/home/konji/.local/bin:$PATH"
+# add binary directories to path
+export PATH="$HOME/.local/bin:$HOME/go/bin:$PATH"
 
 # Path to your Oh My Zsh installation.
 export ZSH="/usr/share/oh-my-zsh"
@@ -12,7 +12,6 @@ COMPLETION_WAITING_DOTS="true"
 
 # zsh plugins
 plugins=(
-    git
     rust
     sudo
 )
@@ -34,11 +33,36 @@ export EDITOR=nvim
 export MANPAGER='nvim +Man!'
 
 # set aliases
-alias git-clone-all="git branch -r | grep -v '\->' | while read remote; do git branch --track \"\${remote#origin/}\" \"\$remote\"; done"
 alias update-package-list="pacman -Qqne > $HOME/mhome/coding/bash/install_scripts/arch_linux/laptop/packages/pacman;\
     pacman -Qqme > $HOME/mhome/coding/bash/install_scripts/arch_linux/laptop/packages/aur"
 alias chafa="TERM=xterm-ghostty chafa"
-alias update="sudo pacman -Syu; paru -Syu; uv tool upgrade --all; cargo install-update -a; flatpak update -y"
+alias update="\
+    echo '\n==============================';\
+    echo 'Updating pacman packages...';\
+    echo '==============================';\
+    sudo pacman -Syu;\
+    echo '\n==============================';\
+    echo 'Updating AUR packages...';\
+    echo '==============================';\
+    paru -Syu; uv tool upgrade --all;\
+    echo '\n==============================';\
+    echo 'Updating cargo packages...';\
+    echo '==============================';\
+    cargo install-update -a;\
+    echo '\n==============================';\
+    echo 'Updating flatpak packages...';\
+    echo '==============================';\
+    flatpak update -y;\
+    echo '\n==============================';\
+    echo 'Updating go packages...';\
+    echo '==============================';\
+    gup update;\
+    echo '\n==============================';\
+    echo 'Updating rust toolchain';\
+    echo '==============================';\
+    rustup self update;\
+    rustup update\
+    "
 
 # make cd command to go to mhome
 cd(){ builtin cd "${1-$HOME/mhome}" "${@:2}"; }
