@@ -15,13 +15,13 @@ plugins=(
     git
     rust
     sudo
-    )
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # start uwsm selector automatically to quickly start graphical session
 if [[ $TMUX = "" ]] && [[ $(grep -i Microsoft /proc/version) = "" ]] && uwsm check may-start -q && uwsm select; then
-	exec systemd-cat -t uwsm_start uwsm start default
+    exec systemd-cat -t uwsm_start uwsm start default
 fi
 
 # print system information if not in tmux
@@ -38,6 +38,7 @@ alias git-clone-all="git branch -r | grep -v '\->' | while read remote; do git b
 alias update-package-list="pacman -Qqne > $HOME/mhome/coding/bash/install_scripts/arch_linux/laptop/packages/pacman;\
     pacman -Qqme > $HOME/mhome/coding/bash/install_scripts/arch_linux/laptop/packages/aur"
 alias chafa="TERM=xterm-ghostty chafa"
+alias update="sudo pacman -Syu; paru -Syu; uv tool upgrade --all; cargo install-update -a; flatpak update -y"
 
 # make cd command to go to mhome
 cd(){ builtin cd "${1-$HOME/mhome}" "${@:2}"; }
@@ -67,8 +68,8 @@ set -o ignoreeof
 # pnpm
 export PNPM_HOME="/home/konji/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
