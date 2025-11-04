@@ -44,12 +44,14 @@ return {
                         abbr = 50,
                     },
                     ellipsis_char = "...",
-                    show_labelDetails = false,
+                    show_labeldetails = false,
 
-                    -- The function below will be called before any actual modifications from lspkind
+                    -- the function below will be called before any actual modifications from lspkind
                     before = function(_, vim_item)
-                        -- remove labelDetails CUZ show_labelDetails = false DOES NOT WORK
+                        -- remove labeldetails cuz show_labeldetails = false does not work
                         vim_item.menu = ""
+                        -- remove icon that lspkind itself also adds
+                        vim_item.icon = ""
 
                         return vim_item
                     end,
@@ -57,6 +59,7 @@ return {
             },
             mapping = cmp.mapping.preset.insert({
                 ["<Enter>"] = cmp.mapping.confirm({ select = false }),
+                ["<C-k>"] = cmp.mapping.open_docs(),
             }),
         })
         -- setup vim-dadbod-completion
