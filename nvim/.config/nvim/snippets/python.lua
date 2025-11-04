@@ -41,14 +41,14 @@ return {
     -- Function definition snippet
     s("def", {
         t("def "),
-        i(1, "function_name"),
+        i(1, "function_name"), -- function name
         t("("),
-        i(2, ""),
+        i(2, ""), -- parameters
         t(")"),
         t(" -> "),
-        i(3, "None"),
+        i(3, "None"), -- return type
         t({ ":", "\t" }),
-        d(4, pydocsnip, { 2, 3 }),
-        i(0, "pass"),
+        d(4, pydocsnip, { 2, 3 }), -- dynamic docstring based on params and return type
+        i(0, "pass"), -- function body
     }),
 }

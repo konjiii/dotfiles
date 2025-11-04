@@ -18,6 +18,9 @@ return {
         vim.keymap.set("n", "<leader>ff", function()
             builtin.find_files({ hidden = true })
         end)
+        vim.keymap.set("n", "<leader>rg", function()
+            builtin.live_grep()
+        end)
         vim.keymap.set("n", "<leader>ts", builtin.treesitter)
     end,
 }
