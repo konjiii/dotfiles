@@ -59,7 +59,6 @@ return {
             },
             mapping = cmp.mapping.preset.insert({
                 ["<Enter>"] = cmp.mapping.confirm({ select = false }),
-                ["<C-k>"] = cmp.mapping.open_docs(),
             }),
         })
         -- setup vim-dadbod-completion

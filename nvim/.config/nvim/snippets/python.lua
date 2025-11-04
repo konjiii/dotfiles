@@ -2,32 +2,38 @@
 local function pydocsnip(args, _, old_state)
     -- nodes to hold the snippet nodes
     local nodes = {
-        t({ '"""', "\t" }),
+        t({ '"""' }),
         i(1, "A short Description"),
-        t({ "", "\t" }),
+        t({ "." }),
     }
 
     local params = args[1][1]
     local return_type = args[2][1]
     local return_index = 1
 
-    -- At least one param.
+    -- if at least one param create the Args: section
     if string.len(params) ~= 0 then
-        vim.list_extend(nodes, { t({ "", "\t" }) })
+        vim.list_extend(nodes, { t({ "", "\t", "\tArgs:", "\t" }) })
         -- loop over all parameters
         for indx, param in ipairs(vim.split(params, ", ", true)) do
             -- get actual parameter name
-            param_name = vim.split(param, ":", true)[1]
+            local param_name = vim.split(param, ":", true)[1]
 
             -- create an entry and new insert node in docstring for each parameter
-            vim.list_extend(nodes, { t({ ":param " .. param_name .. ": " }), i(indx + 1), t({ "", "\t" }) })
+            vim.list_extend(
+                nodes,
+                { t({ "\t" .. param_name .. ": " }), i(indx + 1, "parameter description"), t({ ".", "\t" }) }
+            )
             return_index = indx + 2
         end
     end
 
     -- if return type is not None, add return docstring
     if return_type ~= "None" then
-        vim.list_extend(nodes, { t({ ":return: " }), i(return_index), t({ "", "\t" }) })
+        vim.list_extend(
+            nodes,
+            { t({ "", "\tReturns:", "\t\t" }), i(return_index, "return value description"), t({ ".", "\t" }) }
+        )
     end
 
     vim.list_extend(nodes, { t({ '"""', "\t" }) })
