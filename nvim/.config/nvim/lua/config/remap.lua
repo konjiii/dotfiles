@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 
 -- move selected lines with J and K
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<C-J>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<C-K>", ":m '<-2<CR>gv=gv")
 
 -- indent/unindent multiple lines at once
 vim.keymap.set("v", "<Tab>", ">gv")
@@ -20,14 +20,11 @@ vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 vim.keymap.set("v", "<leader>x", '"+x')
 
--- delete without yanking
-vim.keymap.set("v", "d", '"_d')
-
--- skip to end or beginning of line in normal and visual mode
-vim.keymap.set("n", "L", "$")
-vim.keymap.set("n", "H", "^")
-vim.keymap.set("v", "L", "$h")
-vim.keymap.set("v", "H", "^")
+-- -- skip to end or beginning of line in normal and visual mode
+-- vim.keymap.set("n", "L", "$")
+-- vim.keymap.set("n", "H", "^")
+-- vim.keymap.set("v", "L", "$h")
+-- vim.keymap.set("v", "H", "^")
 
 -- find and replace in whole file (" rpf") or in current line (" rpl") or in current selection (" rps")
 vim.keymap.set("n", "<leader>rpa", ":%s//gc<left><left><left>")
