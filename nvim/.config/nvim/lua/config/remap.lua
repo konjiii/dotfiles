@@ -25,6 +25,7 @@ vim.keymap.set("v", "<leader>x", '"+x')
 -- vim.keymap.set("n", "H", "^")
 -- vim.keymap.set("v", "L", "$h")
 -- vim.keymap.set("v", "H", "^")
+vim.keymap.set("v", "$", "$h")
 
 -- find and replace in whole file (" rpf") or in current line (" rpl") or in current selection (" rps")
 vim.keymap.set("n", "<leader>rpa", ":%s//gc<left><left><left>")
