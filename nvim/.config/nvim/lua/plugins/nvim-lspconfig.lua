@@ -1,3 +1,4 @@
+-- LSP configuration for neovim
 return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
