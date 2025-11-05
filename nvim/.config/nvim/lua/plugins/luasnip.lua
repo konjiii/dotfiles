@@ -9,7 +9,7 @@ return {
     end,
     keys = {
         {
-            "<C-J>",
+            "<C-j>",
             function()
                 require("luasnip").expand()
             end,
@@ -17,7 +17,7 @@ return {
             desc = "Expand or jump in a snippet",
         },
         {
-            "<C-L>",
+            "<C-l>",
             function()
                 require("luasnip").jump(1)
             end,
@@ -25,7 +25,7 @@ return {
             desc = "Jump forward in a snippet",
         },
         {
-            "<C-H>",
+            "<C-h>",
             function()
                 require("luasnip").jump(-1)
             end,
@@ -33,7 +33,7 @@ return {
             desc = "Jump backward in a snippet",
         },
         {
-            "<C-E>",
+            "<C-k>",
             function()
                 if require("luasnip").choice_active() then
                     require("luasnip").change_choice(1)
