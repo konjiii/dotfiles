@@ -6,4 +6,7 @@ font-size = 15
 theme = Catppuccin Mocha
 
 #keybinds
+# unbind toggle fullscreen
 keybind = ctrl+enter=unbind
+# unbind writing scrollback to file
+keybind = ctrl+shift+j=unbind
