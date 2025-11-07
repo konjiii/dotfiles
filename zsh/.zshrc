@@ -44,7 +44,11 @@ alias update="\
     echo '\n==============================';\
     echo 'Updating AUR packages...';\
     echo '==============================';\
-    paru -Syu; uv tool upgrade --all;\
+    paru -Syu;\
+    echo '\n==============================';\
+    echo 'Updating uv tools...';\
+    echo '==============================';\
+    uv tool upgrade --all;\
     echo '\n==============================';\
     echo 'Updating cargo packages...';\
     echo '==============================';\
