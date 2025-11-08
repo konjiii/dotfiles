@@ -1,6 +1,12 @@
 local dap, dapui = require("dap"), require("dapui")
 
 -- adapter definition
+dap.adapters.codelldb = {
+    id = "codelldb",
+    type = "executable",
+    command = "/home/konji/.local/share/nvim/mason/bin/codelldb",
+}
+
 dap.adapters.cppdbg = {
     id = "cppdbg",
     type = "executable",
@@ -33,6 +39,19 @@ dap.adapters.python = function(cb, config)
 end
 
 -- configuration per language
+dap.configurations.zig = {
+    {
+        name = "Launch file",
+        type = "codelldb",
+        request = "launch",
+        program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/zig-out/bin/", "file")
+        end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+    },
+}
+
 dap.configurations.c = {
     {
         name = "Launch file",
