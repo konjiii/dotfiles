@@ -5,12 +5,20 @@ return {
         "mfussenegger/nvim-dap",
         "nvim-neotest/nvim-nio",
     },
-    config = function(_, opts)
-        require("dapui").setup(opts)
-    end,
-    -- stylua: ignore
+    main = "dapui",
+    opts = {},
     keys = {
-        { "<leader>b", function() require("dap").toggle_breakpoint() end },
-        { "<leader>dap", function() require("dap").continue() end },
+        {
+            "<leader>b",
+            function()
+                require("dap").toggle_breakpoint()
+            end,
+        },
+        {
+            "<leader>dap",
+            function()
+                require("dap").continue()
+            end,
+        },
     },
 }
