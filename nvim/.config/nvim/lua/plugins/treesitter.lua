@@ -6,7 +6,15 @@ return {
         require("nvim-treesitter.configs").setup(opts)
     end,
     opts = {
-        ensure_installed = { "markdown_inline", "regex", "vim", "vimdoc", "query", "python" },
+        ensure_installed = {
+            "markdown",
+            "markdown_inline",
+            "regex",
+            "vim",
+            "vimdoc",
+            "query",
+            "latex",
+        },
         sync_install = false,
         auto_install = true,
         highlight = {
