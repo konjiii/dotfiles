@@ -11,6 +11,8 @@ return {
         vim.lsp.enable("pyright") -- pyright
         vim.lsp.enable("clangd") -- clangd
         vim.lsp.enable("ocamllsp") -- ocamllsp
+        vim.lsp.enable("svelteserver") -- svelte
+        vim.lsp.enable("tsls") -- typescript
     end,
     keys = {
         { "<leader>rn", vim.lsp.buf.rename, desc = "LSP Rename" },
