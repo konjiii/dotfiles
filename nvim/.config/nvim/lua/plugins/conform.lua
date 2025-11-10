@@ -19,7 +19,6 @@ return {
             go = { "gofmt" },
             bib = { "bibtex-tidy" },
             tex = { "tex-fmt" },
-            ocaml = { "ocamlformat" },
             json = { "prettier" },
             rust = { "rustfmt" },
         },
