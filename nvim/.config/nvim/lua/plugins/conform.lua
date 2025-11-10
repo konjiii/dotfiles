@@ -21,6 +21,8 @@ return {
             tex = { "tex-fmt" },
             json = { "prettier" },
             rust = { "rustfmt" },
+            elixir = { "mix" },
+            gleam = { "gleam" },
         },
         formatters = {
             stylua = {
