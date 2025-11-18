@@ -19,11 +19,15 @@ return {
     s("gpa", {
         t("var gpa = std.heap.GeneralPurposeAllocator(.{}){};"),
         t({ "", "" }),
+        t("defer _ = gpa.deinit();"),
+        t({ "", "" }),
         t("const allocator = gpa.allocator();"),
     }),
     -- ArenaAllocator definition
     s("aa", {
         t("var aa = std.heap.ArenaAllocator.init(allocator);"),
+        t({ "", "" }),
+        t("defer aa.deinit();"),
         t({ "", "" }),
         t("const arena_allocator = aa.allocator();"),
     }),
