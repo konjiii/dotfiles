@@ -4,16 +4,16 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     init = function()
         vim.lsp.enable("rust_analyzer") -- rust
-        vim.lsp.enable("luals") -- lua
+        vim.lsp.enable("lua_ls") -- lua
         vim.lsp.enable("bashls") -- bash
         vim.lsp.enable("gopls") -- go
         vim.lsp.enable("zls") -- zig
         vim.lsp.enable("pyright") -- python
         vim.lsp.enable("clangd") -- c
-        vim.lsp.enable("svelteserver") -- svelte
-        vim.lsp.enable("tsls") -- typescript
+        vim.lsp.enable("svelte") -- svelte
+        vim.lsp.enable("ts_ls") -- typescript
         vim.lsp.enable("expert") -- elixir
-        vim.lsp.enable("gleam-lsp") -- gleam
+        vim.lsp.enable("gleam") -- gleam
     end,
     keys = {
         { "<leader>rn", vim.lsp.buf.rename, desc = "LSP Rename" },
