@@ -5,7 +5,7 @@ return {
     init = function()
         vim.lsp.enable("rust_analyzer") -- rust
         vim.lsp.enable("luals") -- lua
-        vim.lsp.enable("bash_lsp") -- bash
+        vim.lsp.enable("bashls") -- bash
         vim.lsp.enable("gopls") -- go
         vim.lsp.enable("zls") -- zig
         vim.lsp.enable("pyright") -- python
