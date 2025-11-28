@@ -28,9 +28,13 @@ if [[ $TMUX = "" ]]; then
     fastfetch
 fi
 
-# set editor and manpager as neovim
+# set some env variables
 export EDITOR=nvim
 export MANPAGER='nvim +Man!'
+# -R: retain colors
+# -F: quit if the content fits on one screen
+# -X: do not clear the screen after exit
+export LESS="-R -F -X"
 
 # set aliases
 alias update-package-list="pacman -Qqne > $HOME/mhome/coding/bash/install_scripts/arch_linux/laptop/packages/pacman;\
