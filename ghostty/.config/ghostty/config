@@ -10,3 +10,6 @@ theme = Catppuccin Mocha
 keybind = ctrl+enter=unbind
 # unbind writing scrollback to file
 keybind = ctrl+shift+j=unbind
+
+# force gtk single instance mode for faster startups
+gtk-single-instance = true
