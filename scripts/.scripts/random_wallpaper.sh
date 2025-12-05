@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-WALLPAPER_DIR=~/.wallpapers
-WALLPAPER="$(fd . $WALLPAPER_DIR | shuf -n 1)"
+SRC_DIR=~/.wallpapers
+DEST_FILE=~/.cache/current_wallpaper.png
 
-cp "$WALLPAPER" "$WALLPAPER_DIR/current.png"
+# select random wallpaper from SRC_DIR
+WALLPAPER="$(fd . $SRC_DIR | shuf -n 1)"
+
+# create a symlink to the selected wallpaper
+ln -sf "$WALLPAPER" "$DEST_FILE"
