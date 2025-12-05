@@ -18,10 +18,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# start uwsm selector automatically to quickly start graphical session
-if [[ $TMUX = "" ]] && [[ $(grep -i Microsoft /proc/version) = "" ]] && uwsm check may-start -q && uwsm select; then
-    exec systemd-cat -t uwsm_start uwsm start default
-fi
+# # start uwsm selector automatically to quickly start graphical session
+# if [[ $TMUX = "" ]] && [[ $(grep -i Microsoft /proc/version) = "" ]] && uwsm check may-start -q && uwsm select; then
+#     exec systemd-cat -t uwsm_start uwsm start default
+# fi
 
 # print system information if not in tmux
 if [[ $TMUX = "" ]]; then

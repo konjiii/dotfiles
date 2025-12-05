@@ -1,0 +1,8 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=ghostty --gtk-single-instance=true --quit-after-last-window-closed=false --initial-window=false
+Restart=on-failure
