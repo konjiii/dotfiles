@@ -1,0 +1,15 @@
+[app-name=volume-notifier]
+layer=overlay
+history=0
+anchor=top-center
+# Group all volume notifications together
+group-by=app-name
+# Hide the group-index
+format=<b>%s</b>\n%b
+
+[app-name=brightness-notifier]
+layer=overlay
+history=0
+anchor=top-center
+group-by=app-name
+format=<b>%s</b>\n%b
