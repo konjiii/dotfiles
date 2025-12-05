@@ -13,3 +13,6 @@ keybind = ctrl+shift+j=unbind
 
 # force gtk single instance mode for faster startups
 gtk-single-instance = true
+
+# remove titlebar
+window-decoration = none
