@@ -112,11 +112,19 @@ binds {
     Mod+V hotkey-overlay-title="Open Clipboard Manager: clipse" { spawn "kitty" "--class=com.example.clipse" "-e" "clipse"; }
 
     // "-l 1.0" limits the volume to 100%.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+" "-l" "1.0"; }
-    Shift+XF86AudioRaiseVolume allow-when-locked=false { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.02-"; }
-    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0 && ~/.scripts/display_volume.sh";
+    }
+    Shift+XF86AudioRaiseVolume allow-when-locked=false {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ && ~/.scripts/display_volume.sh";
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02- && ~/.scripts/display_volume.sh";
+    }
+    XF86AudioMute        allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && ~/.scripts/display_volume.sh";
+    }
+    Pause                allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
     // media keys mapping using playerctl.
     XF86AudioPlay        allow-when-locked=true { spawn "playerctl" "play-pause"; }
@@ -125,11 +133,19 @@ binds {
     XF86AudioNext        allow-when-locked=true { spawn "playerctl" "next"; }
 
     // brightness key mappings for brightnessctl.
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn-sh "brightnessctl --class=backlight set 5%+ && ~/.scripts/display_brightness.sh";
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn-sh "brightnessctl --class=backlight set 5%- && ~/.scripts/display_brightness.sh";
+    }
     // finer adjustment brightness
-    Mod+XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+1%"; }
-    Mod+XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "1%-"; }
+    Mod+XF86MonBrightnessUp allow-when-locked=true {
+        spawn-sh "brightnessctl --class=backlight set 1%+ && ~/.scripts/display_brightness.sh";
+    }
+    Mod+XF86MonBrightnessDown allow-when-locked=true {
+        spawn-sh "brightnessctl --class=backlight set 1%- && ~/.scripts/display_brightness.sh";
+    }
 
     // reload waybar
     Mod+Shift+R { spawn "systemctl" "--user" "restart" "waybar.service" "battery-alert.service" "swayidle.service" "mako.service"; }
@@ -190,8 +206,8 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+Space       { toggle-window-floating; }
-    Mod+Shift+Space { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+Space       { toggle-window-floating; }
+    Mod+Space             { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,

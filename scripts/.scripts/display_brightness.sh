@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 
-msgTag="volume/brightness"
+app_name="brightness-notifier"
 
-# Change the volume using alsa(might differ if you use pulseaudio)
-# amixer -c 0 set Master "$@" > /dev/null
-
-# Query pamixer for the current volume and whether or not the speaker is muted
+# get brightness level using brightnessctl
 max_brightness=$(brightnessctl m)
 brightness=$(brightnessctl g)
 brightness=$(($brightness * 100 / $max_brightness))
@@ -22,10 +19,13 @@ else
     icon="brightness-full"
 fi
 
-# Show the volume notification
-dunstify \
-    -a "changeVolume/Brightness" \
-    -u low \
+# Show the brightness notification
+notify-send\
+    -t 2000\
+    -u low\
+    -a $app_name\
     -i /usr/share/icons/Papirus/48x48/status/notification-display-$icon.svg \
-    -h string:x-dunst-stack-tag:$msgTag \
-    -h int:value:"$brightness" "Brightness: ${brightness}%"
+    -h int:value:$brightness\
+    -h string:x-canonical-private-synchronous:brightness\
+    "Brightness: $brightness%"
+
