@@ -76,7 +76,7 @@ prefer-no-csd
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    match app-id="zen" title="^Picture-in-Picture$"
+    match app-id="zen" title="Picture-in-Picture"
     open-floating true
 }
 
@@ -96,8 +96,10 @@ window-rule {
 
 // float bitwarden window
 window-rule {
-    match app-id="zen" title="Extension: (Bitwarden Password Manager) - Bitwarden — Zen Browser"
+    match app-id="zen" title="Bitwarden"
     open-floating true
+    default-column-width { fixed 622; }
+    default-window-height { fixed 652; }
 }
 
 // enable rounded corners for all windows.
