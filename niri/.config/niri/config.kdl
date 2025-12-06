@@ -88,10 +88,16 @@ window-rule {
 
 // open clipse clipboard manager floating and set its size
 window-rule {
-    match app-id=r#"^com\.example\.clipse$"#
+    match app-id="com.example.clipse"
     open-floating true
     default-column-width { fixed 622; }
     default-window-height { fixed 652; }
+}
+
+// float bitwarden window
+window-rule {
+    match app-id="zen" title="Extension: (Bitwarden Password Manager) - Bitwarden — Zen Browser"
+    open-floating true
 }
 
 // enable rounded corners for all windows.
@@ -166,6 +172,10 @@ binds {
     Mod+Shift+J     { move-window-down-or-to-workspace-down; }
     Mod+Shift+K     { move-window-up-or-to-workspace-up; }
     Mod+Shift+L     { move-column-right; }
+
+    // for moving floating windows across workspaces
+    Mod+Ctrl+K     { move-window-to-workspace-up; }
+    Mod+Ctrl+J     { move-window-to-workspace-down; }
 
     Mod+Shift+U     { move-workspace-up; }
     Mod+Shift+D     { move-workspace-down; }
