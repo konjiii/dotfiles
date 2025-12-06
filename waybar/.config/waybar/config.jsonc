@@ -7,14 +7,15 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window",
+        "niri/workspaces",
+        "niri/window",
     ],
     "modules-center": [
         "clock",
         "privacy",
     ],
     "modules-right": [
+        "idle_inhibitor",
         "group/sysinfo",
         "pulseaudio",
         "battery",
@@ -47,30 +48,11 @@
             "disk",
         ],
     },
-    "hyprland/workspaces": {
-        "format": "{icon}{windows}",
-        "format-window-separator": "",
-        "window-rewrite-default": "",
-        "window-rewrite": {
-            "class<discord>": "  ",
-            "class<WebCord>": "  ",
-            "title<.*youtube.*>": "  ", // Windows whose titles contain "youtube"
-            "title<.*reddit.*>": " 󰑍 ", // Windows whose titles contain "reddit"
-            "title<.*github.*>": "  ", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-            "class<floorp>": "  ", // Windows whose classes are "firefox"
-            "class<code.*>": " 󰨞 ",
-            "class<spotify>": "  ",
-            "class<steam>": "  ",
-            "class<kitty>": "  ",
-        },
+    "niri/workspaces": {
     },
-    "hyprland/window": {
+    "niri/window": {
         "format": "",
         "icon": true,
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
     },
     "clock": {
         "format": "{:%Y-%m-%d %H:%M} ",
@@ -93,6 +75,8 @@
                     "on-click-forward": "tz_up",
                     "on-click-backward": "tz_down",
                     }
+    },
+    "idle_inhibitor": {
     },
     "disk": {
         "format": "{used}/{total}  ",
@@ -122,15 +106,8 @@
         },
         "on-click": "pavucontrol"
     },
-    "gamemode": {
-        "format": "{glyph} {count}",
-        "glyph": "",
-        "hide-not-running": true,
-        "use-icon": true,
-        "icon-name": "input-gaming-symbolic",
-        "icon-spacing": 4,
-        "icon-size": 20,
-        "tooltip": true,
-        "tooltip-format": "Games running: {count}"
-    }
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
 }
