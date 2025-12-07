@@ -18,6 +18,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+(cat ~/.cache/wallust/sequences &)
+
 # # start uwsm selector automatically to quickly start graphical session
 # if [[ $TMUX = "" ]] && [[ $(grep -i Microsoft /proc/version) = "" ]] && uwsm check may-start -q && uwsm select; then
 #     exec systemd-cat -t uwsm_start uwsm start default
