@@ -6,7 +6,12 @@ return {
         priority = 1000,
         opts = { show_end_of_buffer = true },
     },
-    { "rose-pine/neovim", name = "rose-pine", priority = 1000 },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        priority = 1000,
+        opts = { variant = "moon" },
+    },
     { "morhetz/gruvbox", priority = 1000 },
     { "sainnhe/everforest", priority = 1000, opts = { background = "hard" } },
     {

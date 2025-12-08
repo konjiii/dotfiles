@@ -30,5 +30,5 @@ palette = "dark"
 #alpha = 100
 
 [templates]
-# waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
+waybar = { src = "waybar.css", dst = "~/.config/waybar/colors.css" }
 pywal = { src = ".", dst = '~/.cache/wal/' }

@@ -102,6 +102,22 @@ window-rule {
     default-window-height { fixed 652; }
 }
 
+// float btop window
+window-rule {
+    match title="btop-viewer"
+    open-floating true
+    default-column-width { fixed 1000; }
+    default-window-height { fixed 750; }
+}
+
+// float pavucontrol window
+window-rule {
+    match app-id="org.pulseaudio.pavucontrol"
+    open-floating true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+}
+
 // enable rounded corners for all windows.
 window-rule {
     geometry-corner-radius 12
@@ -118,6 +134,7 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "pkill fuzzel || fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+V hotkey-overlay-title="Open Clipboard Manager: clipse" { spawn "kitty" "--class=com.example.clipse" "-e" "clipse"; }
+    Mod+Period hotkey-overlay-title="Emoji picker" { spawn "rofimoji"; }
 
     // "-l 1.0" limits the volume to 100%.
     XF86AudioRaiseVolume allow-when-locked=true {

@@ -1,113 +1,161 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": [
-        "niri/workspaces",
-        "niri/window",
-    ],
-    "modules-center": [
-        "clock",
-        "privacy",
-    ],
-    "modules-right": [
-        "idle_inhibitor",
-        "group/sysinfo",
-        "pulseaudio",
-        "battery",
-        "tray",
-    ],
-    "battery": {
+  // "layer": "top", // Waybar at top layer
+  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 45, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 0, // Gaps between modules (n px)
+  // Choose the order of the modules
+  "modules-left": ["group/clock_weather", "niri/workspaces", "niri/window"],
+  "modules-center": ["custom/spotify"],
+  "modules-right": [
+    // "idle_inhibitor",
+    "group/sysinfo",
+    // "pulseaudio",
+    "group/volume_brightness",
+    "tray",
+  ],
+  "group/clock_weather": {
+    "orientation": "horizontal",
+    "modules": ["clock", "custom/weather"],
+  },
+  "clock": {
+    "format": " {:%H:%M   %m/%d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
     },
-    "privacy": {
-        "icon-spacing": 4,
-        "icon-size": 18,
-        "transition-duration": 250,
-        "modules": [
-            {
-                "type": "screenshare",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
-            {
-                "type": "audio-in",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
-        ]
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
     },
-    "group/sysinfo": {
-        "orientation": "horizontal",
-        "modules": [
-            "cpu",
-            "memory",
-            "disk",
-        ],
+  },
+  "custom/weather": {
+    "exec": "${HOME}/.config/waybar/scripts/get_weather.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600,
+  },
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+      "default": "",
     },
-    "niri/workspaces": {
+  },
+  "niri/window": {
+    "format": "",
+    "icon": true,
+  },
+  "custom/spotify": {
+    "format": "  {text}",
+    "return-type": "json",
+    "max-length": 40,
+    "on-click": "playerctl -p spotify play-pause",
+    "exec": "playerctl -p spotify metadata --format '{\"text\": \"{{markup_escape(artist)}} - {{markup_escape(title)}}\", \"tooltip\": \"album: {{markup_escape(album)}}\"}' -F 2> /dev/null",
+    "exec-if": "pgrep spotify",
+  },
+  "group/sysinfo": {
+    "orientation": "horizontal",
+    "modules": ["network", "bluetooth", "temperature", "memory", "battery"],
+  },
+  "network": {
+    "format-wifi": "{icon} {signalStrength}%",
+    "format-ethernet": " {ipaddr}",
+    "format-disconnected": "⚠ Disconnected",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "tooltip-format": "{essid} ({signalStrength}%)",
+    "on-click": "networkmanager_dmenu",
+  },
+  "bluetooth": {
+    "format-connected": "󰂯 {num_connections}",
+    "format": "󰂯 {status}",
+    "format-disabled": "󰂲 Off",
+    "format-off": "󰂲 Off",
+    "tooltip-format": "{controller_alias:<20.20} {controller_address} (host)\n{device_connected}",
+    "tooltip-format-connected": "{controller_alias:<20.20} {controller_address} (host)\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias:<20.20} {device_address}",
+  },
+  "temperature": {
+    "format": "{icon} {temperatureC}°C ",
+    "format-icons": ["", "", ""],
+    "critical-threshold": 80,
+    "warning-threshold": 70,
+    "format-critical": " {temperatureC}°C",
+    "tooltip": false,
+    "on-click": "alacritty --title btop-viewer -e btop",
+  },
+  "memory": {
+    "format": " {}%",
+    "on-click": "alacritty --title btop-viewer -e btop",
+    "states": {
+      "warning": 80,
+      "critical": 90,
     },
-    "niri/window": {
-        "format": "",
-        "icon": true,
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "states": {
+      "warning": 30,
+      "critical": 20,
     },
-    "clock": {
-        "format": "{:%Y-%m-%d %H:%M} ",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-                    "mode"          : "month",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "left",
-                    "on-scroll"     : 1,
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-click-forward": "tz_up",
-                    "on-click-backward": "tz_down",
-                    }
+  },
+  "group/volume_brightness": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio", "backlight"],
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " {volume}%",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
     },
-    "idle_inhibitor": {
-    },
-    "disk": {
-        "format": "{used}/{total}  ",
-        "path": "/",
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}%  "
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": "{volume}%  {icon}",
-        "format-muted": "{volume}% ",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
+    "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 2%+ && ~/.scripts/display_volume.sh",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 2%- && ~/.scripts/display_volume.sh",
+    "scroll-step": 2,
+    "smooth-scrolling-threshold": 0.5,
+    "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "on-scroll-up": "brightnessctl set +5% && ~/.scripts/display_brightness.sh",
+    "on-scroll-down": "brightnessctl set 5%- && ~/.scripts/display_brightness.sh",
+    "smooth-scrolling-threshold": 0.5,
+    "tooltip": false,
+  },
+  "tray": {
+    "spacing": 10,
+  },
 }

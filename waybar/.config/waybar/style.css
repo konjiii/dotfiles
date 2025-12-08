@@ -1,0 +1,135 @@
+@import "colors.css";
+
+* {
+  font-family: "JetBrains Mono Nerd Font";
+  font-weight: bold;
+}
+
+window#waybar {
+  background-color: alpha(@background, 0.5);
+  border: none;
+  box-shadow: none;
+}
+
+#clock_weather,
+#workspaces,
+#sysinfo,
+#volume_brightness,
+#tray {
+  background-color: @background;
+  padding: 0 10px;
+  margin: 5px 5px;
+  border-radius: 10px;
+  border: 1px solid @color0;
+}
+
+#clock_weather #clock {
+  color: @color3;
+  border-right: 1px solid @color0;
+  padding-right: 10px;
+}
+
+#clock_weather #custom-weather {
+  color: @foreground;
+  padding-left: 10px;
+}
+
+#workspaces button.active {
+  color: @foreground;
+  padding: 0 5px;
+  font-size: 18px;
+}
+
+#workspaces button {
+  color: @color0;
+  padding: 0 5px;
+}
+
+#custom-spotify {
+  color: @color2;
+}
+
+#sysinfo #network {
+  color: @color1;
+  border-right: 1px solid @color0;
+  padding-right: 10px;
+}
+
+#sysinfo #bluetooth {
+  color: @color3;
+  padding-left: 10px;
+  border-right: 1px solid @color0;
+  padding-right: 10px;
+}
+
+#sysinfo #temperature {
+  color: @color6;
+  padding-left: 10px;
+  border-right: 1px solid @color0;
+  padding-right: 10px;
+}
+
+#sysinfo #temperature.warning {
+  background-color: @color3;
+  color: @background;
+  padding-left: 10px;
+  border-right: 1px solid @color0;
+  padding-right: 10px;
+}
+
+#sysinfo #temperature.critical {
+  background-color: @color1;
+  color: @background;
+  padding-left: 10px;
+  border-right: 1px solid @color0;
+  padding-right: 10px;
+}
+
+#sysinfo #memory {
+  color: @color2;
+  padding-left: 10px;
+  border-right: 1px solid @color0;
+  padding-right: 10px;
+}
+
+#sysinfo #memory.warning {
+  background-color: @color3;
+  color: @background;
+  padding-left: 10px;
+  border-right: 1px solid @color0;
+  padding-right: 10px;
+}
+
+#sysinfo #memory.critical {
+  background-color: @color1;
+  color: @background;
+  padding-left: 10px;
+  border-right: 1px solid @color0;
+  padding-right: 10px;
+}
+
+#sysinfo #battery {
+  color: @color7;
+  padding-left: 10px;
+}
+
+#sysinfo #battery.warning {
+  color: @color3;
+  padding-left: 10px;
+}
+
+#sysinfo #battery.critical {
+  color: @color1;
+  padding-left: 10px;
+}
+
+#volume_brightness #pulseaudio {
+  color: @color5;
+  border-right: 1px solid @color0;
+  padding-right: 10px;
+}
+
+#volume_brightness #backlight {
+  color: @color4;
+  padding-left: 10px;
+}
