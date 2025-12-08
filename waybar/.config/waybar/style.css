@@ -13,6 +13,7 @@ window#waybar {
 
 #clock_weather,
 #workspaces,
+#idle_inhibitor,
 #sysinfo,
 #volume_brightness,
 #tray {
@@ -49,10 +50,23 @@ window#waybar {
   color: @color2;
 }
 
-#sysinfo #network {
+#idle_inhibitor {
+  color: @color8;
+  padding-right: 18px;
+}
+
+#idle_inhibitor.activated {
+  color: @color1;
+}
+
+#sysinfo #connection {
   color: @color1;
   border-right: 1px solid @color0;
   padding-right: 10px;
+}
+
+#sysinfo #connection #network.vpn {
+  padding-right: 6px;
 }
 
 #sysinfo #bluetooth {
