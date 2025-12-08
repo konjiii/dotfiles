@@ -98,7 +98,7 @@
     "tooltip-format-enumerate-connected": "{device_alias:<20.20} {device_address}",
   },
   "temperature": {
-    "format": "{icon} {temperatureC}°C ",
+    "format": "{icon} {temperatureC}°C",
     "format-icons": ["", "", ""],
     "critical-threshold": 80,
     "warning-threshold": 70,
