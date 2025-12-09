@@ -46,6 +46,7 @@
     "format": "{text}",
     "tooltip": true,
     "interval": 3600,
+    "on-click": "~/.config/waybar/scripts/get_weather.sh",
   },
   "niri/workspaces": {
     "format": "{icon}",
