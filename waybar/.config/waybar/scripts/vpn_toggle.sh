@@ -29,7 +29,7 @@ else
         -h string:x-canonical-private-synchronous:vpn-toggler\
         "VPN" "Connecting to VPN..."
 
-    out=$(protonvpn connect 2> /dev/null)
+    out=$(protonvpn connect 2> /dev/null | tail -n 1)
     notify-send\
         -t 5000\
         -u low\
