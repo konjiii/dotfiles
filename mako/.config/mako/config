@@ -1,3 +1,8 @@
+default-timeout=5000
+
+[mode=critical]
+default-timeout=0
+
 [app-name=volume-notifier]
 layer=overlay
 history=0
