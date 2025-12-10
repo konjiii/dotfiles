@@ -12,8 +12,6 @@ COMPLETION_WAITING_DOTS="true"
 
 # zsh plugins
 plugins=(
-    rust
-    sudo
 )
 
 source $ZSH/oh-my-zsh.sh
