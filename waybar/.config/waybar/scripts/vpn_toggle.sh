@@ -2,6 +2,11 @@
 
 app_name="protonvpn-toggler"
 
+# if the protonvpn command is already running, exit
+if pgrep -x "protonvpn" > /dev/null; then
+    exit 0
+fi
+
 # Check if the proton0 interface exists
 if ip link show proton0 > /dev/null 2>&1; then
     # It exists, so we are connected -> Disconnect
